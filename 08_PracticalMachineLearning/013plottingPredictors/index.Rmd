@@ -2,7 +2,7 @@
 title: "Plotting predictors"
 author: "Jeffrey Leek"
 highlighter: highlight.js
-output: pdf_document
+output: html_document
 job: Johns Hopkins Bloomberg School of Public Health
 logo: bloomberg_shield.png
 mode: selfcontained
@@ -73,7 +73,8 @@ dim(training); dim(testing)
 
 ## Feature plot (*caret* package)
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=4}
+```{r featurePlot-example,dependson="trainingTest",fig.height=4,fig.width=4}
+library(caret)
 featurePlot(x=training[,c("age","education","jobclass")],
             y = training$wage,
             plot="pairs")
@@ -85,7 +86,7 @@ featurePlot(x=training[,c("age","education","jobclass")],
 ## Qplot (*ggplot2* package)
 
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+```{r qplot-example,dependson="trainingTest",fig.height=4,fig.width=6}
 library(ISLR); library(ggplot2); library(caret); library(gridExtra);
 qplot(age,wage,data=training)
 ```
@@ -96,7 +97,7 @@ qplot(age,wage,data=training)
 ## Qplot with color (*ggplot2* package)
 
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+```{r qplot-with-color-example,dependson="trainingTest",fig.height=4,fig.width=6}
 qplot(age,wage,colour=jobclass,data=training)
 ```
 
@@ -106,7 +107,7 @@ qplot(age,wage,colour=jobclass,data=training)
 ## Add regression smoothers (*ggplot2* package)
 
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+```{r qplot-with-smoothers-example,dependson="trainingTest",fig.height=4,fig.width=6}
 qq <- qplot(age,wage,colour=education,data=training)
 qq +  geom_smooth(method='lm',formula=y~x)
 ```
@@ -118,6 +119,7 @@ qq +  geom_smooth(method='lm',formula=y~x)
 
 
 ```{r cut2,dependson="trainingTest",fig.height=4,fig.width=6,cache=TRUE}
+library(Hmisc)
 cutWage <- cut2(training$wage,g=3)
 table(cutWage)
 ```
@@ -127,7 +129,7 @@ table(cutWage)
 ## Boxplots with cut2
 
 
-```{r ,dependson="cut2plot",fig.height=4,fig.width=6,cache=TRUE}
+```{r cut2-boxplot-example,dependson="cut2plot",fig.height=4,fig.width=6,cache=TRUE}
 p1 <- qplot(cutWage,age, data=training,fill=cutWage,
       geom=c("boxplot"))
 p1
@@ -138,7 +140,7 @@ p1
 ## Boxplots with points overlayed
 
 
-```{r ,dependson="cut2plot",fig.height=4,fig.width=9}
+```{r cut2-boxplot-with-points-example,dependson="cut2plot",fig.height=4,fig.width=9}
 p2 <- qplot(cutWage,age, data=training,fill=cutWage,
       geom=c("boxplot","jitter"))
 grid.arrange(p1,p2,ncol=2)
@@ -149,7 +151,7 @@ grid.arrange(p1,p2,ncol=2)
 
 ## Tables
 
-```{r ,dependson="cut2",fig.height=4,fig.width=9}
+```{r cut2-tables-example,dependson="cut2",fig.height=4,fig.width=9}
 t1 <- table(cutWage,training$jobclass)
 t1
 prop.table(t1,1)
@@ -160,7 +162,7 @@ prop.table(t1,1)
 
 ## Density plots
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+```{r density-example,dependson="trainingTest",fig.height=4,fig.width=6}
 qplot(wage,colour=education,data=training,geom="density")
 ```
 
