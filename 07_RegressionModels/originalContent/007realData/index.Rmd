@@ -1,12 +1,12 @@
 ---
 title       : Regression in the real world
-subtitle    : 
-author      : Jeffrey Leek, Assistant Professor of Biostatistics 
+subtitle    :
+author      : Jeffrey Leek, Assistant Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -130,7 +131,7 @@ abline(c(lmRegion$coeff[1] + lmRegion$coeff[6],lmRegion$coeff[2]+ lmRegion$coeff
 
 ---
 
-## Income data 
+## Income data
 
 ```{r downloadIncomeData,cache=TRUE}
 download.file("http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data","./data/income.csv",method="curl")
@@ -211,7 +212,7 @@ smoothScatter(age,income)
   * Sensitivity analysis - is it a big difference if you leave it in/take it out?
   * Logs - if the data are right skewed (lots of outliers)
   * Robust methods - we've been doing averages, but there are more robust approaches ([Robust](http://cran.r-project.org/web/views/Robust.html),[rlm](http://stat.ethz.ch/R-manual/R-patched/library/MASS/html/rlm.html))
-  
+
 
 
 
@@ -241,7 +242,7 @@ smoothScatter(age,income)
 
 ---
 
-## Variance changes 
+## Variance changes
 
 ```{r bupaDataChunk,fig.height=4,fig.width=4}
 bupaData <- read.csv("ftp://ftp.ics.uci.edu/pub/machine-learning-databases/liver-disorders/bupa.data",header=F)
@@ -283,7 +284,7 @@ plot(log(ggt),lm1$residuals,col="blue",pch=19)
 
 ---
 
-## Relative units 
+## Relative units
 
 <img class=center src=../../assets/img/relativedeaths.png height=450>
 

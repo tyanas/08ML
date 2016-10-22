@@ -1,12 +1,12 @@
 ---
 title       : Inference basics
-subtitle    : 
-author      : Jeffrey Leek, Assistant Professor of Biostatistics 
+subtitle    :
+author      : Jeffrey Leek, Assistant Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 par(mar=c(5,4,1,2))
@@ -180,7 +181,7 @@ lines(seq(0,5,length=100),dnorm(seq(0,5,length=100),mean=coef(sampleLm4)[2],
 
 $$K^{\circ} = C^{\circ} + 273.15 $$
 $$K^{\circ} = \frac{F^{\circ} + 459.67}{1.8}$$
- 
+
 [http://en.wikipedia.org/wiki/Kelvin](http://en.wikipedia.org/wiki/Kelvin)
 
 
@@ -208,7 +209,7 @@ and
 $$\frac{\hat{b}_0 - b_0}{S.E.(\hat{b}_0)} \sim t_{n-2} $$
 $$\frac{\hat{b}_1 - b_1}{S.E.(\hat{b}_1)} \sim t_{n-2}$$
 
-Degrees of Freedom $\approx$ number of samples - number of things you estimated. 
+Degrees of Freedom $\approx$ number of samples - number of things you estimated.
 
 
 ---
@@ -226,11 +227,11 @@ lines(x,dt(x,df=10),lwd=3,col="blue")
 
 ## Confidence intervals
 
-We have an estimate $\hat{b}_1$ and we want to know something about how good our estimate is. 
+We have an estimate $\hat{b}_1$ and we want to know something about how good our estimate is.
 
 One way is to create a "level $\alpha$ confidence interval".
 
-A confidence interval will include the real parameter $\alpha$ percent of the time in repeated studies. 
+A confidence interval will include the real parameter $\alpha$ percent of the time in repeated studies.
 
 
 ---

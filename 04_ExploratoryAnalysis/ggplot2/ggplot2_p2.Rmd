@@ -1,12 +1,12 @@
 ---
 title       : The ggplot2 Plotting System - Part 2
-subtitle    : 
+subtitle    :
 author      : Roger D. Peng, Associate Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -15,6 +15,7 @@ mode        : selfcontained # {standalone, draft}
 ---
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 80)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/', fig.height = 4, cache = TRUE, fig.show = 'hold')
@@ -41,12 +42,12 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ## Basic Components of a ggplot2 Plot
 - A _data frame_
-- _aesthetic mappings_: how data are mapped to color, size 
-- _geoms_: geometric objects like points, lines, shapes. 
-- _facets_: for conditional plots. 
-- _stats_: statistical transformations like binning, quantiles, smoothing. 
-- _scales_: what scale an aesthetic map uses (example: male = red, female = blue). 
-- _coordinate system_ 
+- _aesthetic mappings_: how data are mapped to color, size
+- _geoms_: geometric objects like points, lines, shapes.
+- _facets_: for conditional plots.
+- _stats_: statistical transformations like binning, quantiles, smoothing.
+- _scales_: what scale an aesthetic map uses (example: male = red, female = blue).
+- _coordinate system_
 
 ---
 
@@ -75,7 +76,7 @@ maacs <- read.csv("ggplot2_lecture2_data.csv")
 
 ```{r, fig.width=9}
 library(ggplot2)
-qplot(logpm25, NocturnalSympt, data = maacs, facets = . ~ bmicat, 
+qplot(logpm25, NocturnalSympt, data = maacs, facets = . ~ bmicat,
       geom = c("point", "smooth"), method = "lm")
 ```
 
@@ -129,12 +130,12 @@ g + geom_point() + facet_grid(. ~ bmicat) + geom_smooth(method = "lm")
 
 ## Annotation
 - Labels: `xlab()`, `ylab()`, `labs()`, `ggtitle()`
-- Each of the “geom” functions has options to modify 
-- For things that only make sense globally, use `theme()` 
-  - Example: `theme(legend.position = "none")` 
+- Each of the “geom” functions has options to modify
+- For things that only make sense globally, use `theme()`
+  - Example: `theme(legend.position = "none")`
 - Two standard appearance themes are included
   - `theme_gray()`: The default theme (gray background)
-  - `theme_bw()`: More stark/plain 
+  - `theme_bw()`: More stark/plain
 
 ---
 
@@ -150,7 +151,7 @@ g + geom_point(aes(color = bmicat), size = 4, alpha = 1/2)
 ## Modifying Labels
 
 ```{r}
-g + geom_point(aes(color = bmicat)) + labs(title = "MAACS Cohort") + 
+g + geom_point(aes(color = bmicat)) + labs(title = "MAACS Cohort") +
   labs(x = expression("log " * PM[2.5]), y = "Nocturnal Symptoms")
 ```
 
@@ -159,7 +160,7 @@ g + geom_point(aes(color = bmicat)) + labs(title = "MAACS Cohort") +
 ## Customizing the Smooth
 
 ```{r}
-g + geom_point(aes(color = bmicat), size = 2, alpha = 1/2) + 
+g + geom_point(aes(color = bmicat), size = 2, alpha = 1/2) +
   geom_smooth(size = 4, linetype = 3, method = "lm", se = FALSE)
 ```
 
@@ -226,12 +227,12 @@ levels(maacs$no2tert)
 g <- ggplot(maacs, aes(logpm25, NocturnalSympt))
 
 ## Add layers
-g + geom_point(alpha = 1/3) + 
-  facet_wrap(bmicat ~ no2tert, nrow = 2, ncol = 4) + 
-  geom_smooth(method="lm", se=FALSE, col="steelblue") + 
-  theme_bw(base_family = "Avenir", base_size = 10) + 
-  labs(x = expression("log " * PM[2.5])) + 
-  labs(y = "Nocturnal Symptoms") + 
+g + geom_point(alpha = 1/3) +
+  facet_wrap(bmicat ~ no2tert, nrow = 2, ncol = 4) +
+  geom_smooth(method="lm", se=FALSE, col="steelblue") +
+  theme_bw(base_family = "Avenir", base_size = 10) +
+  labs(x = expression("log " * PM[2.5])) +
+  labs(y = "Nocturnal Symptoms") +
   labs(title = "MAACS Cohort")
 ```
 
@@ -244,12 +245,12 @@ g + geom_point(alpha = 1/3) +
 g <- ggplot(maacs, aes(logpm25, NocturnalSympt))
 
 ## Add layers
-g + geom_point(alpha = 1/3) + 
-  facet_wrap(bmicat ~ no2tert, nrow = 2, ncol = 4) + 
-  geom_smooth(method="lm", se=FALSE, col="steelblue") + 
-  theme_bw(base_family = "Avenir", base_size = 10) + 
-  labs(x = expression("log " * PM[2.5])) + 
-  labs(y = "Nocturnal Symptoms") + 
+g + geom_point(alpha = 1/3) +
+  facet_wrap(bmicat ~ no2tert, nrow = 2, ncol = 4) +
+  geom_smooth(method="lm", se=FALSE, col="steelblue") +
+  theme_bw(base_family = "Avenir", base_size = 10) +
+  labs(x = expression("log " * PM[2.5])) +
+  labs(y = "Nocturnal Symptoms") +
   labs(title = "MAACS Cohort")
 ```
 

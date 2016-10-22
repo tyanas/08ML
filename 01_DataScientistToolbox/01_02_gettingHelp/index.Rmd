@@ -1,12 +1,12 @@
 ---
 title       : Getting help
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -36,7 +37,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 * __In a standard class__
   * There are 30-100 people
   * You raise your hand and ask a question
-  * The instructor responds 
+  * The instructor responds
 * __In a MOOC__
   * There are almost 100,000 people
   * You post a question to the message board
@@ -90,11 +91,11 @@ __R reference card__
 ## How to ask an R question
 
 * What steps will reproduce the problem?
-* What is the expected output? 
+* What is the expected output?
 * What do you see instead?
-* What version of the product (e.g. R, packages, etc.) 
+* What version of the product (e.g. R, packages, etc.)
 are you using?
-* What operating system? 
+* What operating system?
 
 ---
 
@@ -115,8 +116,8 @@ are you using?
   * HELP! Don't understand PCA!
 
 * Better
-  * R 2.15.0 lm() function produces seg fault with large data frame, Mac OS X 
-10.6.3 
+  * R 2.15.0 lm() function produces seg fault with large data frame, Mac OS X
+10.6.3
   * Applied principal component analysis to a matrix - what are U, D, and $V^T$?
 
 * Even better
@@ -124,10 +125,10 @@ are you using?
   * Using principal components to discover common variation in rows of a matrix, should I use U, D or $V^T$?
 
 
---- 
+---
 
 
-## Etiquette for forums/help sites: DOs 
+## Etiquette for forums/help sites: DOs
 
 * Describe the goal
 * Be explicit

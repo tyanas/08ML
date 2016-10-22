@@ -6,7 +6,7 @@ job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -14,6 +14,7 @@ widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F, results='hide'}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -57,7 +58,7 @@ points(5, 0, cex = 2, bg = "darkorange", col = "black", pch = 21)
 
 ---
 ## Summary of the plot
-Calling a point an outlier is vague. 
+Calling a point an outlier is vague.
   * Outliers can be the result of spurious or real processes.
   * Outliers can have varying degrees of influence.
   * Outliers can conform to the regression relationship (i.e being marginally outlying in X or Y, but not outlying given the regression relationship).
@@ -82,7 +83,7 @@ Calling a point an outlier is vague.
 ## How do I use all of these things?
 * Be wary of simplistic rules for diagnostic plots and measures. The use of these tools is context specific. It's better to understand what they are trying to accomplish and use them judiciously.
 * Not all of the measures have meaningful absolute scales. You can look at them relative to the values across the data.
-* They probe your data in different ways to diagnose different problems. 
+* They probe your data in different ways to diagnose different problems.
 * Patterns in your residual plots generally indicate some poor aspect of model fit. These can include:
   * Heteroskedasticity (non constant variance).
   * Missing model terms.
@@ -96,7 +97,7 @@ Calling a point an outlier is vague.
 ```{r, fig.height=5, fig.width=5, echo=FALSE}
 x <- c(10, rnorm(n)); y <- c(10, c(rnorm(n)))
 plot(x, y, frame = FALSE, cex = 2, pch = 21, bg = "lightblue", col = "black")
-abline(lm(y ~ x))            
+abline(lm(y ~ x))
 ```
 
 ---
@@ -104,7 +105,7 @@ abline(lm(y ~ x))
 ```
 n <- 100; x <- c(10, rnorm(n)); y <- c(10, c(rnorm(n)))
 plot(x, y, frame = FALSE, cex = 2, pch = 21, bg = "lightblue", col = "black")
-abline(lm(y ~ x))            
+abline(lm(y ~ x))
 ```
 * The point `c(10, 10)` has created a strong regression relationship where there shouldn't be one.
 
@@ -123,7 +124,7 @@ x <- rnorm(n); y <- x + rnorm(n, sd = .3)
 x <- c(5, x); y <- c(5, y)
 plot(x, y, frame = FALSE, cex = 2, pch = 21, bg = "lightblue", col = "black")
 fit2 <- lm(y ~ x)
-abline(fit2)            
+abline(fit2)
 ```
 
 ---

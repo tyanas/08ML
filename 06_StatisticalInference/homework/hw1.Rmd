@@ -4,7 +4,7 @@ subtitle    : (Use arrow keys to navigate)
 author      : Brian Caffo
 job         : Johns Hopkins Bloomberg School of Public Health
 framework   : io2012
-highlighter : highlight.js  
+highlighter : highlight.js
 hitheme     : tomorrow
 #url:
 #    lib: ../../librariesNew #Remove new if using old slidify
@@ -13,6 +13,7 @@ widgets     : [mathjax, quiz, bootstrap]
 mode        : selfcontained # {standalone, draft}
 ---
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F, results='hide'}
+library(knitr)
 # make this an external chunk that can be included in any file
 library(knitr)
 options(width = 100)

@@ -1,12 +1,12 @@
 ---
 title       : Predicting with regression, multiple covariates
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -109,7 +110,7 @@ qplot(age,wage,colour=education,data=training)
 
 ---
 
-## Fit a linear model 
+## Fit a linear model
 
 $$ ED_i = b_0 + b_1 age + b_2 I(Jobclass_i="Information") + \sum_{k=1}^4 \gamma_k I(education_i= level k) $$
 
@@ -133,7 +134,7 @@ plot(finMod,1,pch=19,cex=0.5,col="#00000010")
 
 ---
 
-## Color by variables not used in the model 
+## Color by variables not used in the model
 
 ```{r,dependson="modelFit",fig.height=4,fig.width=6}
 qplot(finMod$fitted,finMod$residuals,colour=race,data=training)
@@ -172,7 +173,7 @@ qplot(wage,pred,data=testing)
 
 ## Notes and further reading
 
-* Often useful in combination with other models 
+* Often useful in combination with other models
 * [Elements of statistical learning](http://www-stat.stanford.edu/~tibs/ElemStatLearn/)
 * [Modern applied statistics with S](http://www.amazon.com/Modern-Applied-Statistics-W-N-Venables/dp/0387954570)
 * [Introduction to statistical learning](http://www-bcf.usc.edu/~gareth/ISL/)

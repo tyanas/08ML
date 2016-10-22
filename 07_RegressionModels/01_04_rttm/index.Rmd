@@ -6,7 +6,7 @@ job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 ---
 
 ```{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -32,7 +33,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 ```
 
 ## A historically famous idea, Regression to the Mean
-* Why is it that the children of tall parents tend to be tall, but not as tall as their parents? 
+* Why is it that the children of tall parents tend to be tall, but not as tall as their parents?
 * Why do children of short parents tend to be short, but not as short as their parents?
 * Why do parents of very short children, tend to be short, but not a short as their child? And the same with parents of very tall children?
 * Why do the best performing athletes this year tend to do a little worse the following?
@@ -50,10 +51,10 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ---
 ## Regression to the mean
-* Suppose that we normalize $X$ (child's height) and $Y$ (parent's height) so that they both have mean 0 and variance 1. 
+* Suppose that we normalize $X$ (child's height) and $Y$ (parent's height) so that they both have mean 0 and variance 1.
 * Then, recall, our regression line passes through $(0, 0)$ (the mean of the X and Y).
 * If the slope of the regression line is $Cor(Y,X)$, regardless of which variable is the outcome (recall, both standard deviations are 1).
-* Notice if $X$ is the outcome and you create a plot where $X$ is the horizontal axis, the slope of the least squares line that you plot is $1/Cor(Y, X)$. 
+* Notice if $X$ is the outcome and you create a plot where $X$ is the horizontal axis, the slope of the least squares line that you plot is $1/Cor(Y, X)$.
 
 ---
 <<<<<<< HEAD
@@ -96,9 +97,9 @@ g
 ---
 ## Discussion
 * If you had to predict a son's normalized height, it would be
-  $Cor(Y, X) * X_i$ 
+  $Cor(Y, X) * X_i$
 * If you had to predict a father's normalized height, it would be
   $Cor(Y, X) * Y_i$
 * Multiplication by this correlation shrinks toward 0 (regression toward the mean)
 * If the correlation is 1 there is no regression to the mean (if father's height perfectly determine's child's height and vice versa)
-* Note, regression to the mean has been thought about quite a bit and generalized 
+* Note, regression to the mean has been thought about quite a bit and generalized

@@ -1,12 +1,12 @@
 ---
 title       : Combining predictors
-subtitle    : 
-author      : Jeffrey Leek, Assistant Professor of Biostatistics 
+subtitle    :
+author      : Jeffrey Leek, Assistant Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, cache=TRUE, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -42,7 +43,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ## Netflix prize
 
-BellKor = Combination of 107 predictors 
+BellKor = Combination of 107 predictors
 
 <img class=center src=../../assets/img/08_PredictionAndMachineLearning/netflix.png height=450>
 
@@ -72,7 +73,7 @@ If accuracy is 70% for each:
 
 With 101 independent classifiers
   * 99.9% majority vote accuracy
-  
+
 
 ---
 
@@ -125,14 +126,14 @@ dim(validation)
 ```{r modFit,dependson="wage"}
 mod1 <- train(wage ~.,method="glm",data=training)
 mod2 <- train(wage ~.,method="rf",
-              data=training, 
+              data=training,
               trControl = trainControl(method="cv"),number=3)
 ```
 
 
 ---
 
-## Predict on the testing set 
+## Predict on the testing set
 
 ```{r predict,dependson="modFit",fig.height=4,fig.width=6}
 pred1 <- predict(mod1,testing); pred2 <- predict(mod2,testing)

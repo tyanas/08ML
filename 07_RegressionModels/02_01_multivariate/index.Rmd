@@ -1,12 +1,12 @@
 ---
 title       : Multivariable regression
-subtitle    : 
+subtitle    :
 author      : Brian Caffo, Roger Peng and Jeff Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -14,6 +14,7 @@ widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F, results='hide'}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -30,7 +31,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 runif(1)
 ```
 ## Multivariable regression analyses
-* If I were to present evidence of a relationship between 
+* If I were to present evidence of a relationship between
 breath mint useage (mints per day, X) and pulmonary function
 (measured in FEV), you would be skeptical.
   * Likely, you would say, 'smokers tend to use more breath mints than non smokers, smoking is related to a loss in pulmonary function. That's probably the culprit.'
@@ -39,11 +40,11 @@ breath mint useage (mints per day, X) and pulmonary function
 
 ---
 ## Multivariable regression analyses
-* An insurance company is interested in how last year's claims can predict a person's time in the hospital this year. 
+* An insurance company is interested in how last year's claims can predict a person's time in the hospital this year.
   * They want to use an enormous amount of data contained in claims to predict a single number. Simple linear regression is not equipped to handle more than one predictor.
 * How can one generalize SLR to incoporate lots of regressors for
 the purpose of prediction?
-* What are the consequences of adding lots of regressors? 
+* What are the consequences of adding lots of regressors?
   * Surely there must be consequences to throwing variables in that aren't related to Y?
   * Surely there must be consequences to omitting variables that are?
 
@@ -53,11 +54,11 @@ the purpose of prediction?
 by adding terms linearly into the model.
 $$
 Y_i =  \beta_1 X_{1i} + \beta_2 X_{2i} + \ldots +
-\beta_{p} X_{pi} + \epsilon_{i} 
+\beta_{p} X_{pi} + \epsilon_{i}
 = \sum_{k=1}^p X_{ik} \beta_j + \epsilon_{i}
 $$
 * Here $X_{1i}=1$ typically, so that an intercept is included.
-* Least squares (and hence ML estimates under iid Gaussianity 
+* Least squares (and hence ML estimates under iid Gaussianity
 of the errors) minimizes
 $$
 \sum_{i=1}^n \left(Y_i - \sum_{k=1}^p X_{ki} \beta_j\right)^2
@@ -66,7 +67,7 @@ $$
 Thus
 $$
 Y_i =  \beta_1 X_{1i}^2 + \beta_2 X_{2i}^2 + \ldots +
-\beta_{p} X_{pi}^2 + \epsilon_{i} 
+\beta_{p} X_{pi}^2 + \epsilon_{i}
 $$
 is still a linear model. (We've just squared the elements of the
 predictor variables.)
@@ -74,7 +75,7 @@ predictor variables.)
 ---
 ## How to get estimates
 * Recall that the LS estimate for regression through the origin, $E[Y_i]=X_{1i}\beta_1$, was $\sum X_i Y_i / \sum X_i^2$.
-* Let's consider two regressors, $E[Y_i] = X_{1i}\beta_1 + X_{2i}\beta_2 = \mu_i$. 
+* Let's consider two regressors, $E[Y_i] = X_{1i}\beta_1 + X_{2i}\beta_2 = \mu_i$.
 * Least squares tries to minimize
 $$
 \sum_{i=1}^n (Y_i - X_{1i} \beta_1 - X_{2i} \beta_2)^2
@@ -83,7 +84,7 @@ $$
 ---
 ## Result
 $$\hat \beta_1 = \frac{\sum_{i=1}^n e_{i, Y | X_2} e_{i, X_1 | X_2}}{\sum_{i=1}^n e_{i, X_1 | X_2}^2}$$
-* That is, the regression estimate for $\beta_1$ is the regression 
+* That is, the regression estimate for $\beta_1$ is the regression
 through the origin estimate having regressed $X_2$ out of both
 the response and the predictor.
 * (Similarly, the regression estimate for $\beta_2$ is the regression  through the origin estimate having regressed $X_1$ out of both the response and the predictor.)
@@ -109,8 +110,8 @@ $$
 $$
 \sum_{i=1}^n (Y_i - X_{1i}\beta_1 - \ldots - X_{pi}\beta_p)^2
 $$
-* The least squares estimate for the coefficient of a multivariate regression model is exactly regression through the origin with the linear relationships with the other regressors removed from both the regressor and outcome by taking residuals. 
-* In this sense, multivariate regression "adjusts" a coefficient for the linear impact of the other variables. 
+* The least squares estimate for the coefficient of a multivariate regression model is exactly regression through the origin with the linear relationships with the other regressors removed from both the regressor and outcome by taking residuals.
+* In this sense, multivariate regression "adjusts" a coefficient for the linear impact of the other variables.
 
 ---
 ## Demonstration that it works using an example
@@ -122,7 +123,7 @@ ey = resid(lm(y ~ x2 + x3))
 ex = resid(lm(x ~ x2 + x3))
 sum(ey * ex) / sum(ex ^ 2)
 coef(lm(ey ~ ex - 1))
-coef(lm(y ~ x + x2 + x3)) 
+coef(lm(y ~ x + x2 + x3))
 ```
 
 ---

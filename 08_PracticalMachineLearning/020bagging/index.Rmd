@@ -1,12 +1,12 @@
 ---
 title       : Bagging
-subtitle    : 
-author      : Jeffrey Leek 
+subtitle    :
+author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -34,14 +35,14 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ## Bootstrap aggregating (bagging)
 
-__Basic idea__: 
+__Basic idea__:
 
 1. Resample cases and recalculate predictions
 2. Average or majority vote
 
 __Notes__:
 
-* Similar bias 
+* Similar bias
 * Reduced variance
 * More useful for non-linear functions
 
@@ -87,8 +88,8 @@ lines(1:155,apply(ll,2,mean),col="red",lwd=2)
 
 ## Bagging in caret
 
-* Some models perform bagging for you, in `train` function consider `method` options 
-  * `bagEarth` 
+* Some models perform bagging for you, in `train` function consider `method` options
+  * `bagEarth`
   * `treebag`
   * `bagFDA`
 * Alternatively you can bag any model you choose using the `bag` function

@@ -5,8 +5,8 @@ author      : Brian Caffo, Jeff Leek, Roger Peng
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012
-highlighter : highlight.js  
-hitheme     : tomorrow       
+highlighter : highlight.js
+hitheme     : tomorrow
 url:
     lib: ../../librariesNew #Remove new if using old slidify
     assets: ../../assets
@@ -15,6 +15,7 @@ mode        : selfcontained # {standalone, draft}
 ext_widgets : {rCharts: ["libraries/highcharts","libraries/nvd3", "libraries/morris", "libraries/leaflet", "libraries/rickshaw"]}
 ---
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F, results='hide'}
+library(knitr)
 # make this an external chunk that can be included in any file
 library(knitr)
 options(width = 100)
@@ -35,7 +36,7 @@ runif(1)
 
 ---
 ## BONUS RMaps!!!
-- There's a new github repository describing connections between more 
+- There's a new github repository describing connections between more
   mapping libraries and R
   - We already saw leaflet
 
@@ -51,7 +52,7 @@ install_github('ramnathv/rMaps')
 ```
 #library(rjson); library(rMaps)
 #crosslet(
-#  x = "country", 
+#  x = "country",
 #  y = c("web_index", "universal_access", "impact_empowerment", #"freedom_openness"),
 #  data = web_index
 #)
@@ -61,7 +62,7 @@ install_github('ramnathv/rMaps')
 ```{r, echo=FALSE, warning=FALSE, results='hide'}
 #library(rjson); library(rMaps)
 #crosslet(
-#  x = "country", 
+#  x = "country",
 #  y = c("web_index", "universal_access", "impact_empowerment", #"freedom_openness"),
 #  data = web_index
 #)

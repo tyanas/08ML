@@ -1,12 +1,12 @@
 ---
 title       : What about big data?
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -15,6 +15,7 @@ mode        : selfcontained # {standalone, draft}
 ---
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 70)
 opts_chunk$set(message = F, error = F, warning = F, echo = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache = T, cache.path = '.cache/', fig.path = 'fig/')
@@ -40,7 +41,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ---
 
-## So what about big data? 
+## So what about big data?
 
 <img class=center src="../../assets/img/01_DataScientistToolbox/bigdata.png" height=400 />
 
@@ -83,7 +84,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ## Big or small - you need the right data
 
-<q>The data may not contain the answer. The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data... </q> 
+<q>The data may not contain the answer. The combination of some data and an aching desire for an answer does not ensure that a reasonable answer can be extracted from a given body of data... </q>
 
 [Tukey](http://en.wikipedia.org/wiki/John_Tukey)
 

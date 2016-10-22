@@ -1,12 +1,12 @@
 ---
 title       : Preprocessing with Principal Components Analysis (PCA)
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -104,7 +105,7 @@ If $X$ is a matrix with each variable in a column and each observation in a row 
 
 $$ X = UDV^T$$
 
-where the columns of $U$ are orthogonal (left singular vectors), the columns of $V$ are orthogonal (right singluar vectors) and $D$ is a diagonal matrix (singular values). 
+where the columns of $U$ are orthogonal (left singular vectors), the columns of $V$ are orthogonal (right singluar vectors) and $D$ is a diagonal matrix (singular values).
 
 __PCA__
 
@@ -185,10 +186,10 @@ confusionMatrix(testing$type,predict(modelFit,testing))
 
 * Most useful for linear-type models
 * Can make it harder to interpret predictors
-* Watch out for outliers! 
+* Watch out for outliers!
   * Transform first (with logs/Box Cox)
   * Plot predictors to identify problems
-* For more info see 
+* For more info see
   * Exploratory Data Analysis
   * [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
-  
+

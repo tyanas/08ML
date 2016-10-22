@@ -1,12 +1,12 @@
 ---
 title       : Random forests
-subtitle    : 
-author      : Jeffrey Leek, Assistant Professor of Biostatistics 
+subtitle    :
+author      : Jeffrey Leek, Assistant Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', cache=TRUE, dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -125,7 +126,7 @@ __Notes__:
 
 * Random forests are usually one of the two top
 performing algorithms along with boosting in prediction contests.
-* Random forests are difficult to interpret but often very accurate. 
+* Random forests are difficult to interpret but often very accurate.
 * Care should be taken to avoid overfitting (see [rfcv](http://cran.r-project.org/web/packages/randomForest/randomForest.pdf) funtion)
 
 

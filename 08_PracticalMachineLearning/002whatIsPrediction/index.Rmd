@@ -1,12 +1,12 @@
 ---
 title       : What is prediction?
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -100,9 +101,9 @@ Can I use quantitative characteristics of the emails to classify them as SPAM/HA
 
 
 <b>
-Dear Jeff, 
+Dear Jeff,
 
-Can you send me your address so I can send you the invitation? 
+Can you send me your address so I can send you the invitation?
 
 Thanks,
 
@@ -122,11 +123,11 @@ Ben
 
 </br>
 
-<b> 
+<b>
 
-Dear Jeff, 
+Dear Jeff,
 
-Can <rt>you</rt> send me your address so I can send <rt>you</rt> the invitation? 
+Can <rt>you</rt> send me your address so I can send <rt>you</rt> the invitation?
 
 Thanks,
 
@@ -178,7 +179,7 @@ lines(density(spam$your[spam$type=="spam"]),col="red")
 
 __Our algorithm__
 
-* Find a value $C$. 
+* Find a value $C$.
 * __frequency of 'your' $>$ C__ predict "spam"
 
 ---

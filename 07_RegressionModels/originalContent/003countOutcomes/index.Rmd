@@ -1,12 +1,12 @@
 ---
 title       : Count outcomes
-subtitle    : 
-author      : Jeffrey Leek, Assistant Professor of Biostatistics 
+subtitle    :
+author      : Jeffrey Leek, Assistant Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -178,7 +179,7 @@ plot(glm1$fitted,glm1$residuals,pch=19,col="grey",ylab="Residuals",xlab="Date")
 
 ---
 
-## Model agnostic standard errors 
+## Model agnostic standard errors
 
 ```{r agnostic, dependson="poisReg",fig.height=4.5,fig.width=4.5,cache=TRUE}
 library(sandwich)
@@ -213,7 +214,7 @@ confint.agnostic(glm1)
 
 ---
 
-## Rates 
+## Rates
 
 
 <br><br>
@@ -231,7 +232,7 @@ $$ \log\left(E[NHSS_i | JD_i, b_0, b_1]\right) = \log(NH_i) + b_0 + b_1 JD_i $$
 
 ---
 
-## Fitting rates in R 
+## Fitting rates in R
 
 ```{r ratesFit,dependson="agnostic", cache=TRUE,fig.height=4,fig.width=4}
 glm2 <- glm(gaData$simplystats ~ julian(gaData$date),offset=log(visits+1),
@@ -242,7 +243,7 @@ points(julian(gaData$date),glm1$fitted,col="red",pch=19)
 
 ---
 
-## Fitting rates in R 
+## Fitting rates in R
 
 ```{r,dependson="ratesFit",fig.height=4,fig.width=4}
 glm2 <- glm(gaData$simplystats ~ julian(gaData$date),offset=log(visits+1),
@@ -259,4 +260,4 @@ lines(julian(gaData$date),glm2$fitted/(gaData$visits+1),col="blue",lwd=3)
 * [Log-linear models and multiway tables](http://ww2.coastal.edu/kingw/statistics/R-tutorials/loglin.html)
 * [Wikipedia on Poisson regression](http://en.wikipedia.org/wiki/Poisson_regression), [Wikipedia on overdispersion](http://en.wikipedia.org/wiki/Overdispersion)
 * [Regression models for count data in R](http://cran.r-project.org/web/packages/pscl/vignettes/countreg.pdf)
-* [pscl package](http://cran.r-project.org/web/packages/pscl/index.html) - the function _zeroinfl_ fits zero inflated models. 
+* [pscl package](http://cran.r-project.org/web/packages/pscl/index.html) - the function _zeroinfl_ fits zero inflated models.

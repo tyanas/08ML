@@ -5,8 +5,8 @@ author      : Brian Caffo, Jeff Leek, Roger Peng
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012
-highlighter : highlight.js  
-hitheme     : tomorrow       
+highlighter : highlight.js
+hitheme     : tomorrow
 url:
     lib: ../../librariesNew #Remove new if using old slidify
     assets: ../../assets
@@ -14,6 +14,7 @@ widgets     : [mathjax, quiz, bootstrap]
 mode        : selfcontained # {standalone, draft}
 ---
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F, results='hide'}
+library(knitr)
 # make this an external chunk that can be included in any file
 library(knitr)
 options(width = 100)

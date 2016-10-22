@@ -1,12 +1,12 @@
 ---
 title       : Covariate creation
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache=TRUE, cache.path = '.cache/', fig.path = 'fig/')
@@ -38,7 +39,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 <img class=center src=../../assets/img/08_PredictionAndMachineLearning/covCreation1.png height=200>
 
-**Level 2: Transforming tidy covariates** 
+**Level 2: Transforming tidy covariates**
 
 ```{r spamData,fig.height=4,fig.width=4}
 library(kernlab);data(spam)
@@ -56,8 +57,8 @@ spam$capitalAveSq <- spam$capitalAve^2
   * Text files: frequency of words, frequency of phrases ([Google ngrams](https://books.google.com/ngrams)), frequency of capital letters.
   * Images: Edges, corners, blobs, ridges ([computer vision feature detection](http://en.wikipedia.org/wiki/Feature_detection_(computer_vision)))
   * Webpages: Number and type of images, position of elements, colors, videos ([A/B Testing](http://en.wikipedia.org/wiki/A/B_testing))
-  * People: Height, weight, hair color, sex, country of origin. 
-* The more knowledge of the system you have the better the job you will do. 
+  * People: Height, weight, hair color, sex, country of origin.
+* The more knowledge of the system you have the better the job you will do.
 * When in doubt, err on the side of more features
 * Can be automated, but use caution!
 
@@ -117,7 +118,7 @@ nsv
 
 ```{r splines,dependson="dummyVar",cache=TRUE}
 library(splines)
-bsBasis <- bs(training$age,df=3) 
+bsBasis <- bs(training$age,df=3)
 bsBasis
 ```
 
@@ -159,4 +160,4 @@ predict(bsBasis,age=testing$age)
   * Be careful about overfitting!
 * [preprocessing with caret](http://caret.r-forge.r-project.org/preprocess.html)
 * If you want to fit spline models, use the _gam_ method in the _caret_ package which allows smoothing of multiple variables.
-* More on feature creation/data tidying in the Obtaining Data course from the Data Science course track. 
+* More on feature creation/data tidying in the Obtaining Data course from the Data Science course track.

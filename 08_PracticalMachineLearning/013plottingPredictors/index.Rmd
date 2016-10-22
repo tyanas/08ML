@@ -1,21 +1,23 @@
 ---
-title       : Plotting predictors
-subtitle    : 
-author      : Jeffrey Leek
-job         : Johns Hopkins Bloomberg School of Public Health
-logo        : bloomberg_shield.png
-framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
-highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+title: "Plotting predictors"
+author: "Jeffrey Leek"
+highlighter: highlight.js
+output: pdf_document
+job: Johns Hopkins Bloomberg School of Public Health
+logo: bloomberg_shield.png
+mode: selfcontained
+hitheme: tomorrow
+subtitle: null
+framework: io2012
 url:
-  lib: ../../librariesNew
   assets: ../../assets
-widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
-mode        : selfcontained # {standalone, draft}
+  lib: ../../librariesNew
+widgets: mathjax
 ---
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -38,7 +40,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 Image Credit [http://www.cahs-media.org/the-high-cost-of-low-wages](http://www.cahs-media.org/the-high-cost-of-low-wages)
 
-Data from: [ISLR package](http://cran.r-project.org/web/packages/ISLR) from the book: [Introduction to statistical learning](http://www-bcf.usc.edu/~gareth/ISL/)  
+Data from: [ISLR package](http://cran.r-project.org/web/packages/ISLR) from the book: [Introduction to statistical learning](http://www-bcf.usc.edu/~gareth/ISL/)
 
 
 
@@ -84,6 +86,7 @@ featurePlot(x=training[,c("age","education","jobclass")],
 
 
 ```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+library(ISLR); library(ggplot2); library(caret); library(gridExtra);
 qplot(age,wage,data=training)
 ```
 
@@ -166,12 +169,12 @@ qplot(wage,colour=education,data=training,geom="density")
 
 ## Notes and further reading
 
-* Make your plots only in the training set 
+* Make your plots only in the training set
   * Don't use the test set for exploration!
 * Things you should be looking for
   * Imbalance in outcomes/predictors
-  * Outliers 
+  * Outliers
   * Groups of points not explained by a predictor
-  * Skewed variables 
+  * Skewed variables
 * [ggplot2 tutorial](http://rstudio-pubs-static.s3.amazonaws.com/2176_75884214fc524dc0bc2a140573da38bb.html)
 * [caret visualizations](http://caret.r-forge.r-project.org/visualizations.html)

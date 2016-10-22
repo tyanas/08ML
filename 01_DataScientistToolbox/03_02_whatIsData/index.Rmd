@@ -1,12 +1,12 @@
 ---
 title       : What is data?
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -15,6 +15,7 @@ mode        : selfcontained # {standalone, draft}
 ---
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 70)
 opts_chunk$set(message = F, error = F, warning = F, echo = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache = T, cache.path = '.cache/', fig.path = 'fig/')
@@ -74,7 +75,7 @@ __Quantitative__: Height, weight, blood pressure
 
 ---
 
-## What do data look like? 
+## What do data look like?
 
 <img class=center src="../../assets/img/01_DataScientistToolbox/fastq.png" height=400 />
 
@@ -82,7 +83,7 @@ __Quantitative__: Height, weight, blood pressure
 
 ---
 
-## What do data look like? 
+## What do data look like?
 
 <img class=center src="../../assets/img/01_DataScientistToolbox/twitter.png" height=400 />
 
@@ -90,7 +91,7 @@ __Quantitative__: Height, weight, blood pressure
 
 ---
 
-## What do data look like? 
+## What do data look like?
 
 <img class=center src="../../assets/img/01_DataScientistToolbox/medicalrecord.png" height=400 />
 
@@ -118,7 +119,7 @@ __Quantitative__: Height, weight, blood pressure
 
 ---
 
-## What do data look like? 
+## What do data look like?
 
 <img class=center src="../../assets/img/01_DataScientistToolbox/datagov.png" height=400 />
 

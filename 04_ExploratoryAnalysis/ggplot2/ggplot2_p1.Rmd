@@ -1,12 +1,12 @@
 ---
 title       : The ggplot2 Plotting System - Part 1
-subtitle    : 
+subtitle    :
 author      : Roger D. Peng, Associate Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -15,6 +15,7 @@ mode        : selfcontained # {standalone, draft}
 ---
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 80)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/', fig.height = 4, cache = TRUE, fig.show = 'hold')
@@ -241,7 +242,7 @@ qplot(log(pm25), log(eno), data = maacs, color = mopos)
 ## Scatterplots: eNO vs. PM$_{2.5}$
 
 ```{r}
-qplot(log(pm25), log(eno), data = maacs, color = mopos, 
+qplot(log(pm25), log(eno), data = maacs, color = mopos,
       geom = c("point", "smooth"), method = "lm")
 ```
 
@@ -251,7 +252,7 @@ qplot(log(pm25), log(eno), data = maacs, color = mopos,
 ## Scatterplots: eNO vs. PM$_{2.5}$
 
 ```{r, fig.width=9}
-qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"), 
+qplot(log(pm25), log(eno), data = maacs, geom = c("point", "smooth"),
       method = "lm", facets = . ~ mopos)
 ```
 

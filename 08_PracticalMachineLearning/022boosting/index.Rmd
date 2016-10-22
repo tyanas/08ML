@@ -1,12 +1,12 @@
 ---
 title       : Boosting
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, cache=TRUE,tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -51,7 +52,7 @@ $f(x) = \rm{sgn}\left(\sum_{t=1}^T \alpha_t h_t(x)\right)$.
   * Iterative, select one $h$ at each step
   * Calculate weights based on errors
   * Upweight missed classifications and select next $h$
-  
+
 [Adaboost on Wikipedia](http://en.wikipedia.org/wiki/AdaBoost)
 
 [http://webee.technion.ac.il/people/rmeir/BoostingTutorial.pdf](http://webee.technion.ac.il/people/rmeir/BoostingTutorial.pdf)
@@ -91,7 +92,7 @@ $f(x) = \rm{sgn}\left(\sum_{t=1}^T \alpha_t h_t(x)\right)$.
 
 ---
 
-## Boosting in R 
+## Boosting in R
 
 * Boosting can be used with any subset of classifiers
 * One large subclass is [gradient boosting](http://en.wikipedia.org/wiki/Gradient_boosting)
@@ -100,7 +101,7 @@ $f(x) = \rm{sgn}\left(\sum_{t=1}^T \alpha_t h_t(x)\right)$.
   * [mboost](http://cran.r-project.org/web/packages/mboost/index.html) - model based boosting
   * [ada](http://cran.r-project.org/web/packages/ada/index.html) - statistical boosting based on [additive logistic regression](http://projecteuclid.org/DPubS?service=UI&version=1.0&verb=Display&handle=euclid.aos/1016218223)
   * [gamBoost](http://cran.r-project.org/web/packages/GAMBoost/index.html) for boosting generalized additive models
-* Most of these are available in the caret package 
+* Most of these are available in the caret package
 
 
 
@@ -143,7 +144,7 @@ qplot(predict(modFit,testing),wage,data=testing)
 * A couple of nice tutorials for boosting
   * Freund and Shapire - [http://www.cc.gatech.edu/~thad/6601-gradAI-fall2013/boosting.pdf](http://www.cc.gatech.edu/~thad/6601-gradAI-fall2013/boosting.pdf)
   * Ron Meir- [http://webee.technion.ac.il/people/rmeir/BoostingTutorial.pdf](http://webee.technion.ac.il/people/rmeir/BoostingTutorial.pdf)
-* Boosting, random forests, and model ensembling are the most common tools that win Kaggle and other prediction contests. 
+* Boosting, random forests, and model ensembling are the most common tools that win Kaggle and other prediction contests.
   * [http://www.netflixprize.com/assets/GrandPrize2009_BPC_BigChaos.pdf](http://www.netflixprize.com/assets/GrandPrize2009_BPC_BigChaos.pdf)
   * [https://kaggle2.blob.core.windows.net/wiki-files/327/09ccf652-8c1c-4a3d-b979-ce2369c985e4/Willem%20Mestrom%20-%20Milestone%201%20Description%20V2%202.pdf](https://kaggle2.blob.core.windows.net/wiki-files/327/09ccf652-8c1c-4a3d-b979-ce2369c985e4/Willem%20Mestrom%20-%20Milestone%201%20Description%20V2%202.pdf)
-  
+

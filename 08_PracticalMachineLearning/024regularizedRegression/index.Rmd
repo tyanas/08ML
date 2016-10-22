@@ -1,12 +1,12 @@
 ---
 title       : Regularized regression
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, cache=TRUE,tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -62,12 +63,12 @@ $$Y = \beta_0 + (\beta_1 + \beta_2)X_1 + \epsilon$$
 The result is:
 
 * You will get a good estimate of $Y$
-* The estimate (of $Y$) will be biased 
+* The estimate (of $Y$) will be biased
 * We may reduce variance in the estimate
 
 ---
 
-## Prostate cancer 
+## Prostate cancer
 
 ```{r prostate}
 library(ElemStatLearn); data(prostate)
@@ -101,14 +102,14 @@ http://www.biostat.jhsph.edu/~ririzarr/Teaching/649/
 
 * Approach
   1. Divide data into training/test/validation
-  2. Treat validation as test data, train all competing models on the train data and pick the best one on validation. 
+  2. Treat validation as test data, train all competing models on the train data and pick the best one on validation.
   3. To appropriately assess performance on new data apply to test set
   4. You may re-split and reperform steps 1-3
 
 * Two common problems
   * Limited data
   * Computational complexity
-  
+
 http://www.biostat.jhsph.edu/~ririzarr/Teaching/649/
 http://www.cbcb.umd.edu/~hcorrada/PracticalML/
 
@@ -150,7 +151,7 @@ http://www.cbcb.umd.edu/~hcorrada/PracticalML/
 
 * Set $\hat{f}_{\lambda}(x) = x'\beta$
 
-* Constrain only $\lambda$ coefficients to be nonzero. 
+* Constrain only $\lambda$ coefficients to be nonzero.
 
 * Selection problem is after chosing $\lambda$ figure out which $p - \lambda$ coefficients to make nonzero
 
@@ -165,7 +166,7 @@ If the $\beta_j$'s are unconstrained:
 * They can explode
 * And hence are susceptible to very high variance
 
-To control variance, we might regularize/shrink the coefficients. 
+To control variance, we might regularize/shrink the coefficients.
 
 $$ PRSS(\beta) = \sum_{j=1}^n (Y_j - \sum_{i=1}^m \beta_{1i} X_{ij})^2 + P(\lambda; \beta)$$
 
@@ -185,7 +186,7 @@ $$ \sum_{i=1}^N \left(y_i - \beta_0 + \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \la
 
 equivalent to solving
 
-$\sum_{i=1}^N \left(y_i - \beta_0 + \sum_{j=1}^p x_{ij}\beta_j \right)^2$ subject to $\sum_{j=1}^p \beta_j^2 \leq s$ where $s$ is inversely proportional to $\lambda$ 
+$\sum_{i=1}^N \left(y_i - \beta_0 + \sum_{j=1}^p x_{ij}\beta_j \right)^2$ subject to $\sum_{j=1}^p \beta_j^2 \leq s$ where $s$ is inversely proportional to $\lambda$
 
 
 Inclusion of $\lambda$ makes the problem non-singular even if $X^TX$ is not invertible.
@@ -215,19 +216,19 @@ http://www.cbcb.umd.edu/~hcorrada/PracticalML/
 
 ---
 
-## Lasso 
+## Lasso
 
-$\sum_{i=1}^N \left(y_i - \beta_0 + \sum_{j=1}^p x_{ij}\beta_j \right)^2$ subject to $\sum_{j=1}^p |\beta_j| \leq s$ 
+$\sum_{i=1}^N \left(y_i - \beta_0 + \sum_{j=1}^p x_{ij}\beta_j \right)^2$ subject to $\sum_{j=1}^p |\beta_j| \leq s$
 
-also has a lagrangian form 
+also has a lagrangian form
 
 $$ \sum_{i=1}^N \left(y_i - \beta_0 + \sum_{j=1}^p x_{ij}\beta_j \right)^2 + \lambda \sum_{j=1}^p |\beta_j|$$
 
 For orthonormal design matrices (not the norm!) this has a closed form solution
 
 $$\hat{\beta}_j = sign(\hat{\beta}_j^0)(|\hat{\beta}_j^0 - \gamma)^{+}$$
- 
-but not in general. 
+
+but not in general.
 
 http://www.biostat.jhsph.edu/~ririzarr/Teaching/649/
 http://www.cbcb.umd.edu/~hcorrada/PracticalML/

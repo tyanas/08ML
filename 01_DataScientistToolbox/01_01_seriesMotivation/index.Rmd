@@ -1,12 +1,12 @@
 ---
 title       : The Data Science Track
-subtitle    : 
+subtitle    :
 author      : Jeffrey Leek
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -56,17 +57,17 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 <center> <font color="#CD3278">Data intensive</font> statistics in <font color="#008B45">biology and medicine</font></center>
 
-* Brian Caffo 
+* Brian Caffo
   * Website [http://www.bcaffo.com/](http://www.bcaffo.com/)
-  * Twitter [@bcaffo](https://twitter.com/bcaffo) 
+  * Twitter [@bcaffo](https://twitter.com/bcaffo)
   * Github [https://github.com/bcaffo](https://github.com/bcaffo)
-* Jeff Leek 
+* Jeff Leek
   * Website [http://biostat.jhsph.edu/~jleek/](http://biostat.jhsph.edu/~jleek/), [http://simplystatistics.org/](http://simplystatistics.org/)
-  * Twitter [@jtleek](https://twitter.com/jtleek) 
+  * Twitter [@jtleek](https://twitter.com/jtleek)
   * Github [https://github.com/jtleek](https://github.com/jtleek)
 * Roger Peng
   * Website [http://www.biostat.jhsph.edu/~rpeng/](http://www.biostat.jhsph.edu/~rpeng/),[http://simplystatistics.org/](http://simplystatistics.org/)
-  * Twitter [@rdpeng](https://twitter.com/rdpeng) 
+  * Twitter [@rdpeng](https://twitter.com/rdpeng)
   * Github [https://github.com/rdpeng](https://github.com/rdpeng)
 
 ---
@@ -87,7 +88,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 [http://www.mckinsey.com/insights/business_technology/big_data_the_next_frontier_for_innovation](http://www.mckinsey.com/insights/business_technology/big_data_the_next_frontier_for_innovation)
 
---- 
+---
 
 ## Why statistical data science?
 
@@ -115,7 +116,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ---
 
-## Why R? 
+## Why R?
 
  <img class=center height=400 src=../../assets/img/01_DataScientistToolbox/nytimesr.png />
 
@@ -123,7 +124,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ---
 
-## Why R? 
+## Why R?
 
 * It is free
 * It has a comprehensive set of packages

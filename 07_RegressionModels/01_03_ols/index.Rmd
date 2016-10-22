@@ -6,7 +6,7 @@ job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -15,6 +15,7 @@ mode        : selfcontained # {standalone, draft}
 
 ---
 ````{r setup, cache = FALSE, echo = FALSE, message = FALSE, warning = FALSE, tidy = FALSE, results='hide', error=FALSE}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -46,15 +47,15 @@ g <- ggplot(filter(freqData, freq > 0), aes(x = parent, y = child))
 g <- g  + scale_size(range = c(2, 20), guide = "none" )
 g <- g + geom_point(colour="grey50", aes(size = freq+20, show_guide = FALSE))
 g <- g + geom_point(aes(colour=freq, size = freq))
-g <- g + scale_colour_gradient(low = "lightblue", high="white")  
+g <- g + scale_colour_gradient(low = "lightblue", high="white")
 g
 ```
 
 ---
 ## Fitting the best line
-* Let $Y_i$ be the $i^{th}$ child's height and $X_i$ be the 
-$i^{th}$ (average over the pair of) parents' heights. 
-* Consider finding the best line 
+* Let $Y_i$ be the $i^{th}$ child's height and $X_i$ be the
+$i^{th}$ (average over the pair of) parents' heights.
+* Consider finding the best line
   * Child's Height = $\beta_0$ + Parent's Height $\beta_1$
 * Use least squares
   $$
@@ -67,7 +68,7 @@ $i^{th}$ (average over the pair of) parents' heights.
   $$\hat \beta_1 = Cor(Y, X) \frac{Sd(Y)}{Sd(X)} ~~~ \hat \beta_0 = \bar Y - \hat \beta_1 \bar X$$
 * $\hat \beta_1$ has the units of $Y / X$, $\hat \beta_0$ has the units of $Y$.
 * The line passes through the point $(\bar X, \bar Y$)
-* The slope of the regression line with $X$ as the outcome and $Y$ as the predictor is $Cor(Y, X) Sd(X)/ Sd(Y)$. 
+* The slope of the regression line with $X$ as the outcome and $Y$ as the predictor is $Cor(Y, X) Sd(X)/ Sd(Y)$.
 * The slope is the same one you would get if you centered the data,
 $(X_i - \bar X, Y_i - \bar Y)$, and did regression through the origin.
 * If you normalized the data, $\{ \frac{X_i - \bar X}{Sd(X)}, \frac{Y_i - \bar Y}{Sd(Y)}\}$, the slope is $Cor(Y, X)$.
@@ -118,7 +119,7 @@ g <- ggplot(filter(freqData, freq > 0), aes(x = parent, y = child))
 g <- g  + scale_size(range = c(2, 20), guide = "none" )
 g <- g + geom_point(colour="grey50", aes(size = freq+20, show_guide = FALSE))
 g <- g + geom_point(aes(colour=freq, size = freq))
-g <- g + scale_colour_gradient(low = "lightblue", high="white")  
+g <- g + scale_colour_gradient(low = "lightblue", high="white")
 g <- g + geom_smooth(method="lm", formula=y~x)
 g
 ```

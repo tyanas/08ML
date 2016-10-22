@@ -1,12 +1,12 @@
 ---
-title       : Structure of a Data Analysis 
+title       : Structure of a Data Analysis
 subtitle    : Part 1
-author      : Roger D. Peng, Associate Professor of Biostatistics 
+author      : Roger D. Peng, Associate Professor of Biostatistics
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : zenburn   # 
+hitheme     : zenburn   #
 url:
   lib: ../../libraries
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache = T, cache.path = '.cache/', fig.path = 'fig/')
@@ -62,7 +63,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 * Create reproducible code
 
 
---- 
+---
 
 ## The key challenge in data analysis
 
@@ -80,7 +81,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 1. Statistical methods development
 2. [Danger zone!!!](http://www.drewconway.com/zia/?p=2378)
-3. Proper data analysis 
+3. Proper data analysis
 
 
 ---
@@ -106,7 +107,7 @@ Can I use quantitative characteristics of the emails to classify them as SPAM/HA
   * Predictive - a training and test data set from the same population
   * Causal - data from a randomized study
   * Mechanistic - data about all components of the system
-  
+
 
 ---
 

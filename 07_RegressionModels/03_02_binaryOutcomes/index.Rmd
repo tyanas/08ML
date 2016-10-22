@@ -6,7 +6,7 @@ job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow      # 
+hitheme     : tomorrow      #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -14,6 +14,7 @@ widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 ---
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -36,7 +37,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
   * Win/loss
   * Success/Failure
   * etc
-* Called binary, Bernoulli or 0/1 outcomes 
+* Called binary, Bernoulli or 0/1 outcomes
 * Collection of exchangeable binary outcomes for the same covariate data are called binomial outcomes.
 
 ---
@@ -65,7 +66,7 @@ $b_0$ - probability of a Ravens win if they score 0 points
 
 $b_1$ - increase in probability of a Ravens win for each additional point
 
-$e_i$ - residual variation due 
+$e_i$ - residual variation due
 
 ---
 
@@ -81,7 +82,7 @@ summary(lmRavens)$coef
 
 __Binary Outcome 0/1__
 
-$$RW_i$$  
+$$RW_i$$
 
 __Probability (0,1)__
 
@@ -89,11 +90,11 @@ $$\rm{Pr}(RW_i | RS_i, b_0, b_1 )$$
 
 
 __Odds $(0,\infty)$__
-$$\frac{\rm{Pr}(RW_i | RS_i, b_0, b_1 )}{1-\rm{Pr}(RW_i | RS_i, b_0, b_1)}$$ 
+$$\frac{\rm{Pr}(RW_i | RS_i, b_0, b_1 )}{1-\rm{Pr}(RW_i | RS_i, b_0, b_1)}$$
 
 __Log odds $(-\infty,\infty)$__
 
-$$\log\left(\frac{\rm{Pr}(RW_i | RS_i, b_0, b_1 )}{1-\rm{Pr}(RW_i | RS_i, b_0, b_1)}\right)$$ 
+$$\log\left(\frac{\rm{Pr}(RW_i | RS_i, b_0, b_1 )}{1-\rm{Pr}(RW_i | RS_i, b_0, b_1)}\right)$$
 
 
 ---
@@ -137,7 +138,7 @@ $\exp(b_1)$ - Odds ratio of win probability for each point scored (compared to z
 
     $$E[earnings]= X p - Y (1 - p) = 0$$
 - Implies
-    $$\frac{Y}{X} = \frac{p}{1 - p}$$    
+    $$\frac{Y}{X} = \frac{p}{1 - p}$$
 - The odds can be said as "How much should you be willing to pay for a $p$ probability of winning a dollar?"
     - (If $p > 0.5$ you have to pay more if you lose than you get if you win.)
     - (If $p < 0.5$ you have to pay less if you lose than you get if you win.)
@@ -147,7 +148,7 @@ $\exp(b_1)$ - Odds ratio of win probability for each point scored (compared to z
 ```
 x <- seq(-10, 10, length = 1000)
 manipulate(
-    plot(x, exp(beta0 + beta1 * x) / (1 + exp(beta0 + beta1 * x)), 
+    plot(x, exp(beta0 + beta1 * x) / (1 + exp(beta0 + beta1 * x)),
          type = "l", lwd = 3, frame = FALSE),
     beta1 = slider(-2, 2, step = .1, initial = 2),
     beta0 = slider(-2, 2, step = .1, initial = 0)
@@ -197,7 +198,7 @@ anova(logRegRavens,test="Chisq")
 
 ## Interpreting Odds Ratios
 
-* Not probabilities 
+* Not probabilities
 * Odds ratio of 1 = no difference in odds
 * Log odds ratio of 0 = no difference in odds
 * Odds ratio < 0.5 or > 2 commonly a "moderate effect"

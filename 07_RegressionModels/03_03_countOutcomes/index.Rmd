@@ -1,12 +1,12 @@
 ---
 title       : Count outcomes, Poisson GLMs
 subtitle    : Regression Models
-author      : Brian Caffo, Jeffrey Leek, Roger Peng 
+author      : Brian Caffo, Jeffrey Leek, Roger Peng
 job         : Johns Hopkins Bloomberg School of Public Health
 logo        : bloomberg_shield.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
-hitheme     : tomorrow   # 
+hitheme     : tomorrow   #
 url:
   lib: ../../librariesNew
   assets: ../../assets
@@ -16,6 +16,7 @@ mode        : selfcontained # {standalone, draft}
 
 
 ```{r setup, cache = F, echo = F, message = F, warning = F, tidy = F}
+library(knitr)
 # make this an external chunk that can be included in any file
 options(width = 100)
 opts_chunk$set(message = F, error = F, warning = F, comment = NA, fig.align = 'center', dpi = 100, tidy = F, cache.path = '.cache/', fig.path = 'fig/')
@@ -70,7 +71,7 @@ For $x = 0, 1, \ldots$.
 par(mfrow = c(1, 3))
 plot(0 : 10, dpois(0 : 10, lambda = 2), type = "h", frame = FALSE)
 plot(0 : 20, dpois(0 : 20, lambda = 10), type = "h", frame = FALSE)
-plot(0 : 200, dpois(0 : 200, lambda = 100), type = "h", frame = FALSE) 
+plot(0 : 200, dpois(0 : 200, lambda = 100), type = "h", frame = FALSE)
 ```
 
 ---
@@ -164,7 +165,7 @@ $e_i$ - variation due to everything we didn't measure
 
 ---
 ## Exponentiating coefficients
-- $e^{E[\log(Y)]}$ geometric mean of $Y$. 
+- $e^{E[\log(Y)]}$ geometric mean of $Y$.
     - With no covariates, this is estimated by $e^{\frac{1}{n}\sum_{i=1}^n \log(y_i)} = (\prod_{i=1}^n y_i)^{1/n}$
 - When you take the natural log of outcomes and fit a regression model, your exponentiated coefficients
 estimate things about geometric means.
@@ -232,7 +233,7 @@ plot(glm1$fitted,glm1$residuals,pch=19,col="grey",ylab="Residuals",xlab="Fitted"
 
 ---
 
-## Model agnostic standard errors 
+## Model agnostic standard errors
 
 ```{r agnostic}
 library(sandwich)
@@ -267,7 +268,7 @@ confint.agnostic(glm1)
 
 ---
 
-## Rates 
+## Rates
 
 
 <br><br>
@@ -285,7 +286,7 @@ $$ \log\left(E[NHSS_i | JD_i, b_0, b_1]\right) = \log(NH_i) + b_0 + b_1 JD_i $$
 
 ---
 
-## Fitting rates in R 
+## Fitting rates in R
 
 ```{r ratesFit,dependson="agnostic", cache=TRUE,fig.height=4,fig.width=4}
 glm2 <- glm(gaData$simplystats ~ julian(gaData$date),offset=log(visits+1),
@@ -296,7 +297,7 @@ points(julian(gaData$date),glm1$fitted,col="red",pch=19)
 
 ---
 
-## Fitting rates in R 
+## Fitting rates in R
 
 ```{r,dependson="ratesFit",fig.height=4,fig.width=4}
 glm2 <- glm(gaData$simplystats ~ julian(gaData$date),offset=log(visits+1),
@@ -313,4 +314,4 @@ lines(julian(gaData$date),glm2$fitted/(gaData$visits+1),col="blue",lwd=3)
 * [Log-linear models and multiway tables](http://ww2.coastal.edu/kingw/statistics/R-tutorials/loglin.html)
 * [Wikipedia on Poisson regression](http://en.wikipedia.org/wiki/Poisson_regression), [Wikipedia on overdispersion](http://en.wikipedia.org/wiki/Overdispersion)
 * [Regression models for count data in R](http://cran.r-project.org/web/packages/pscl/vignettes/countreg.pdf)
-* [pscl package](http://cran.r-project.org/web/packages/pscl/index.html) - the function _zeroinfl_ fits zero inflated models. 
+* [pscl package](http://cran.r-project.org/web/packages/pscl/index.html) - the function _zeroinfl_ fits zero inflated models.
