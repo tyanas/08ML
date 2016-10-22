@@ -40,10 +40,12 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 * Useful when the linear model is (nearly) correct
 
 __Pros__:
+
 * Easy to implement
 * Easy to interpret
 
 __Cons__:
+
 * Often poor performance in nonlinear settings
 
 
@@ -71,7 +73,7 @@ head(trainFaith)
 
 ## Eruption duration versus waiting time
 
-```{r dependson="faith",fig.height=4,fig.width=4}
+```{r eruption,dependson="faith",fig.height=4,fig.width=4}
 plot(trainFaith$waiting,trainFaith$eruptions,pch=19,col="blue",xlab="Waiting",ylab="Duration")
 ```
 
@@ -90,7 +92,7 @@ summary(lm1)
 ---
 ## Model fit
 
-```{r dependson="faithlm",fig.height=4,fig.width=4}
+```{r model-fit,dependson="faithlm",fig.height=4,fig.width=4}
 plot(trainFaith$waiting,trainFaith$eruptions,pch=19,col="blue",xlab="Waiting",ylab="Duration")
 lines(trainFaith$waiting,lm1$fitted,lwd=3)
 ```
@@ -111,7 +113,7 @@ predict(lm1,newdata)
 
 ## Plot predictions - training and test
 
-```{r ,dependson="faithlm",fig.height=4,fig.width=8}
+```{r train-test-plot,dependson="faithlm",fig.height=4,fig.width=8}
 par(mfrow=c(1,2))
 plot(trainFaith$waiting,trainFaith$eruptions,pch=19,col="blue",xlab="Waiting",ylab="Duration")
 lines(trainFaith$waiting,predict(lm1),lwd=3)
@@ -135,7 +137,7 @@ sqrt(sum((predict(lm1,newdata=testFaith)-testFaith$eruptions)^2))
 
 ## Prediction intervals
 
-```{r ,dependson="faithlm",fig.height=4,fig.width=4}
+```{r intervals,dependson="faithlm",fig.height=4,fig.width=4}
 pred1 <- predict(lm1,newdata=testFaith,interval="prediction")
 ord <- order(testFaith$waiting)
 plot(testFaith$waiting,testFaith$eruptions,pch=19,col="blue")

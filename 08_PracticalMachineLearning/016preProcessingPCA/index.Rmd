@@ -51,7 +51,7 @@ which(M > 0.8,arr.ind=T)
 
 ## Correlated predictors
 
-```{r,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r corrPredictors,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
 names(spam)[c(34,32)]
 plot(spam[,34],spam[,32])
 ```
@@ -65,8 +65,8 @@ plot(spam[,34],spam[,32])
 * A weighted combination of predictors might be better
 * We should pick this combination to capture the "most information" possible
 * Benefits
-  * Reduced number of predictors
-  * Reduced noise (due to averaging)
+    * Reduced number of predictors
+    * Reduced noise (due to averaging)
 
 
 ---
@@ -77,7 +77,7 @@ $$ X = 0.71 \times {\rm num 415} + 0.71 \times {\rm num857}$$
 
 $$ Y = 0.71 \times {\rm num 415} - 0.71 \times {\rm num857}$$
 
-```{r,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r rotatedPlot,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
 X <- 0.71*training$num415 + 0.71*training$num857
 Y <- 0.71*training$num415 - 0.71*training$num857
 plot(X,Y)
@@ -145,7 +145,7 @@ plot(prComp$x[,1],prComp$x[,2],col=typeColor,xlab="PC1",ylab="PC2")
 
 ## PCA with caret
 
-```{r ,dependson="spamPC",cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r spamPC-with-caret,dependson="spamPC",cache=TRUE,fig.height=3.5,fig.width=3.5}
 preProc <- preProcess(log10(spam[,-58]+1),method="pca",pcaComp=2)
 spamPC <- predict(preProc,log10(spam[,-58]+1))
 plot(spamPC[,1],spamPC[,2],col=typeColor)
@@ -159,7 +159,7 @@ plot(spamPC[,1],spamPC[,2],col=typeColor)
 ```{r pcaCaret,dependson="spamPC",cache=TRUE,fig.height=3.5,fig.width=3.5}
 preProc <- preProcess(log10(training[,-58]+1),method="pca",pcaComp=2)
 trainPC <- predict(preProc,log10(training[,-58]+1))
-modelFit <- train(training$type ~ .,method="glm",data=trainPC)
+# TODO modelFit <- train(training$type ~ .,method="glm",data=trainPC)
 ```
 
 ---
@@ -168,7 +168,7 @@ modelFit <- train(training$type ~ .,method="glm",data=trainPC)
 
 ```{r ,dependson="pcaCaret",cache=TRUE,fig.height=3.5,fig.width=3.5}
 testPC <- predict(preProc,log10(testing[,-58]+1))
-confusionMatrix(testing$type,predict(modelFit,testPC))
+# TODO confusionMatrix(testing$type,predict(modelFit,testPC))
 ```
 
 ---
@@ -176,8 +176,9 @@ confusionMatrix(testing$type,predict(modelFit,testPC))
 ## Alternative (sets # of PCs)
 
 ```{r ,dependson="pcaCaret",cache=TRUE,fig.height=3.5,fig.width=3.5}
-modelFit <- train(training$type ~ .,method="glm",preProcess="pca",data=training)
-confusionMatrix(testing$type,predict(modelFit,testing))
+# TODO modelFit <- train(training$type ~ .,method="glm",preProcess="pca",data=training)
+# TODO confusionMatrix(testing$type,predict(modelFit,testing))
+#Ошибка в predict(modelFit, testing) :объект 'modelFit' не найден
 ```
 
 ---
@@ -187,9 +188,9 @@ confusionMatrix(testing$type,predict(modelFit,testing))
 * Most useful for linear-type models
 * Can make it harder to interpret predictors
 * Watch out for outliers!
-  * Transform first (with logs/Box Cox)
-  * Plot predictors to identify problems
+    * Transform first (with logs/Box Cox)
+    * Plot predictors to identify problems
 * For more info see
-  * Exploratory Data Analysis
-  * [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
+    * Exploratory Data Analysis
+    * [Elements of Statistical Learning](http://statweb.stanford.edu/~tibs/ElemStatLearn/)
 
