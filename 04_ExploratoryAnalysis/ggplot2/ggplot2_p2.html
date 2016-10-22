@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -125,7 +125,7 @@
   </hgroup>
   <article>
     <pre><code class="r">library(ggplot2)
-qplot(logpm25, NocturnalSympt, data = maacs, facets = . ~ bmicat, 
+qplot(logpm25, NocturnalSympt, data = maacs, facets = . ~ bmicat,
       geom = c(&quot;point&quot;, &quot;smooth&quot;), method = &quot;lm&quot;)
 </code></pre>
 
@@ -158,7 +158,7 @@ summary(g)
 
 <pre><code>data: logpm25, bmicat, NocturnalSympt, logno2_new [554x4]
 mapping:  x = logpm25, y = NocturnalSympt
-faceting: facet_null() 
+faceting: facet_null()
 </code></pre>
 
   </article>
@@ -234,7 +234,7 @@ g + geom_point() + geom_smooth(method = &quot;lm&quot;)
     <ul>
 <li>Labels: <code>xlab()</code>, <code>ylab()</code>, <code>labs()</code>, <code>ggtitle()</code></li>
 <li>Each of the “geom” functions has options to modify </li>
-<li>For things that only make sense globally, use <code>theme()</code> 
+<li>For things that only make sense globally, use <code>theme()</code>
 
 <ul>
 <li>Example: <code>theme(legend.position = &quot;none&quot;)</code> </li>
@@ -272,7 +272,7 @@ g + geom_point(aes(color = bmicat), size = 4, alpha = 1/2)
     <h2>Modifying Labels</h2>
   </hgroup>
   <article>
-    <pre><code class="r">g + geom_point(aes(color = bmicat)) + labs(title = &quot;MAACS Cohort&quot;) + 
+    <pre><code class="r">g + geom_point(aes(color = bmicat)) + labs(title = &quot;MAACS Cohort&quot;) +
   labs(x = expression(&quot;log &quot; * PM[2.5]), y = &quot;Nocturnal Symptoms&quot;)
 </code></pre>
 
@@ -287,7 +287,7 @@ g + geom_point(aes(color = bmicat), size = 4, alpha = 1/2)
     <h2>Customizing the Smooth</h2>
   </hgroup>
   <article>
-    <pre><code class="r">g + geom_point(aes(color = bmicat), size = 2, alpha = 1/2) + 
+    <pre><code class="r">g + geom_point(aes(color = bmicat), size = 2, alpha = 1/2) +
   geom_smooth(size = 4, linetype = 3, method = &quot;lm&quot;, se = FALSE)
 </code></pre>
 
@@ -405,12 +405,12 @@ levels(maacs$no2tert)
 g &lt;- ggplot(maacs, aes(logpm25, NocturnalSympt))
 
 ## Add layers
-g + geom_point(alpha = 1/3) + 
-  facet_wrap(bmicat ~ no2tert, nrow = 2, ncol = 4) + 
-  geom_smooth(method=&quot;lm&quot;, se=FALSE, col=&quot;steelblue&quot;) + 
-  theme_bw(base_family = &quot;Avenir&quot;, base_size = 10) + 
-  labs(x = expression(&quot;log &quot; * PM[2.5])) + 
-  labs(y = &quot;Nocturnal Symptoms&quot;) + 
+g + geom_point(alpha = 1/3) +
+  facet_wrap(bmicat ~ no2tert, nrow = 2, ncol = 4) +
+  geom_smooth(method=&quot;lm&quot;, se=FALSE, col=&quot;steelblue&quot;) +
+  theme_bw(base_family = &quot;Avenir&quot;, base_size = 10) +
+  labs(x = expression(&quot;log &quot; * PM[2.5])) +
+  labs(y = &quot;Nocturnal Symptoms&quot;) +
   labs(title = &quot;MAACS Cohort&quot;)
 </code></pre>
 
@@ -436,8 +436,8 @@ g + geom_point(alpha = 1/3) +
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

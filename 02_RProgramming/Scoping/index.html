@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -214,9 +214,9 @@ If a value for a given symbol cannot be found once the empty environment is arri
   <article>
     <pre><code class="r">make.power &lt;- function(n) {
         pow &lt;- function(x) {
-                x^n 
+                x^n
         }
-        pow 
+        pow
 }
 </code></pre>
 
@@ -268,7 +268,7 @@ f &lt;- function(x) {
         y^2 + g(x)
 }
 
-g &lt;- function(x) { 
+g &lt;- function(x) {
         x*y
 }
 </code></pre>
@@ -308,9 +308,9 @@ g &lt;- function(x) {
   <article>
     <p>When a function is <em>defined</em> in the global environment and is subsequently <em>called</em> from the global environment, then the defining environment and the calling environment are the same. This can sometimes give the appearance of dynamic scoping.</p>
 
-<pre><code class="r">&gt; g &lt;- function(x) { 
+<pre><code class="r">&gt; g &lt;- function(x) {
 + a &lt;- 3
-+ x+a+y 
++ x+a+y
 + }
 &gt; g(2)
 Error in g(2) : object &quot;y&quot; not found
@@ -389,7 +389,7 @@ Error in g(2) : object &quot;y&quot; not found
                 a &lt;- -0.5*length(data)*log(2*pi*sigma^2)
                 b &lt;- -0.5*sum((data-mu)^2) / (sigma^2)
                 -(a + b)
-        } 
+        }
 }
 </code></pre>
 
@@ -514,8 +514,8 @@ plot(x, exp(-(y - min(y))), type = &quot;l&quot;)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

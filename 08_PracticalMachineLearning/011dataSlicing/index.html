@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -79,8 +79,8 @@ folds &lt;- createFolds(y=spam$type,k=10,
 sapply(folds,length)
 </code></pre>
 
-<pre><code>Fold01 Fold02 Fold03 Fold04 Fold05 Fold06 Fold07 Fold08 Fold09 Fold10 
-  4141   4140   4141   4142   4140   4142   4141   4141   4140   4141 
+<pre><code>Fold01 Fold02 Fold03 Fold04 Fold05 Fold06 Fold07 Fold08 Fold09 Fold10
+  4141   4140   4141   4142   4140   4142   4141   4141   4140   4141
 </code></pre>
 
 <pre><code class="r">folds[[1]][1:10]
@@ -104,8 +104,8 @@ folds &lt;- createFolds(y=spam$type,k=10,
 sapply(folds,length)
 </code></pre>
 
-<pre><code>Fold01 Fold02 Fold03 Fold04 Fold05 Fold06 Fold07 Fold08 Fold09 Fold10 
-   460    461    460    459    461    459    460    460    461    460 
+<pre><code>Fold01 Fold02 Fold03 Fold04 Fold05 Fold06 Fold07 Fold08 Fold09 Fold10
+   460    461    460    459    461    459    460    460    461    460
 </code></pre>
 
 <pre><code class="r">folds[[1]][1:10]
@@ -129,10 +129,10 @@ folds &lt;- createResample(y=spam$type,times=10,
 sapply(folds,length)
 </code></pre>
 
-<pre><code>Resample01 Resample02 Resample03 Resample04 Resample05 Resample06 Resample07 Resample08 Resample09 
-      4601       4601       4601       4601       4601       4601       4601       4601       4601 
-Resample10 
-      4601 
+<pre><code>Resample01 Resample02 Resample03 Resample04 Resample05 Resample06 Resample07 Resample08 Resample09
+      4601       4601       4601       4601       4601       4601       4601       4601       4601
+Resample10
+      4601
 </code></pre>
 
 <pre><code class="r">folds[[1]][1:10]
@@ -157,7 +157,7 @@ folds &lt;- createTimeSlices(y=tme,initialWindow=20,
 names(folds)
 </code></pre>
 
-<pre><code>[1] &quot;train&quot; &quot;test&quot; 
+<pre><code>[1] &quot;train&quot; &quot;test&quot;
 </code></pre>
 
 <pre><code class="r">folds$train[[1]]
@@ -203,8 +203,8 @@ names(folds)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

@@ -9,25 +9,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/ribbons.css">
 
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -107,7 +107,7 @@ if(&lt;condition1&gt;) {
 
 <pre><code class="r">y &lt;- if(x &gt; 3) {
         10
-} else { 
+} else {
         0
 }
 </code></pre>
@@ -194,7 +194,7 @@ for(i in 1:4) print(x[i])
 for(i in seq_len(nrow(x))) {
         for(j in seq_len(ncol(x))) {
                 print(x[i, j])
-        }   
+        }
 }
 </code></pre>
 
@@ -241,7 +241,7 @@ while(z &gt;= 3 &amp;&amp; z &lt;= 10) {
                 z &lt;- z + 1
         } else {
                 z &lt;- z - 1
-        } 
+        }
 }
 </code></pre>
 
@@ -268,7 +268,7 @@ repeat {
                 break
         } else {
                 x0 &lt;- x1
-        } 
+        }
 }
 </code></pre>
 
@@ -297,7 +297,7 @@ repeat {
 <pre><code class="r">for(i in 1:100) {
         if(i &lt;= 20) {
                 ## Skip the first 20 iterations
-                next 
+                next
         }
         ## Do something here
 }
@@ -330,8 +330,8 @@ repeat {
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

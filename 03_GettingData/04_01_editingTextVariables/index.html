@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -73,13 +73,13 @@ cameraData &lt;- read.csv(&quot;./data/cameras.csv&quot;)
 names(cameraData)
 </code></pre>
 
-<pre><code>[1] &quot;address&quot;      &quot;direction&quot;    &quot;street&quot;       &quot;crossStreet&quot;  &quot;intersection&quot; &quot;Location.1&quot;  
+<pre><code>[1] &quot;address&quot;      &quot;direction&quot;    &quot;street&quot;       &quot;crossStreet&quot;  &quot;intersection&quot; &quot;Location.1&quot;
 </code></pre>
 
 <pre><code class="r">tolower(names(cameraData))
 </code></pre>
 
-<pre><code>[1] &quot;address&quot;      &quot;direction&quot;    &quot;street&quot;       &quot;crossstreet&quot;  &quot;intersection&quot; &quot;location.1&quot;  
+<pre><code>[1] &quot;address&quot;      &quot;direction&quot;    &quot;street&quot;       &quot;crossstreet&quot;  &quot;intersection&quot; &quot;location.1&quot;
 </code></pre>
 
   </article>
@@ -106,7 +106,7 @@ splitNames[[5]]
 <pre><code class="r">splitNames[[6]]
 </code></pre>
 
-<pre><code>[1] &quot;Location&quot; &quot;1&quot;       
+<pre><code>[1] &quot;Location&quot; &quot;1&quot;
 </code></pre>
 
   </article>
@@ -193,7 +193,7 @@ $numbers
 sapply(splitNames,firstElement)
 </code></pre>
 
-<pre><code>[1] &quot;address&quot;      &quot;direction&quot;    &quot;street&quot;       &quot;crossStreet&quot;  &quot;intersection&quot; &quot;Location&quot;    
+<pre><code>[1] &quot;address&quot;      &quot;direction&quot;    &quot;street&quot;       &quot;crossStreet&quot;  &quot;intersection&quot; &quot;Location&quot;
 </code></pre>
 
   </article>
@@ -255,14 +255,14 @@ head(reviews,2)
 <pre><code class="r">names(reviews)
 </code></pre>
 
-<pre><code>[1] &quot;id&quot;          &quot;solution_id&quot; &quot;reviewer_id&quot; &quot;start&quot;       &quot;stop&quot;        &quot;time_left&quot;  
-[7] &quot;accept&quot;     
+<pre><code>[1] &quot;id&quot;          &quot;solution_id&quot; &quot;reviewer_id&quot; &quot;start&quot;       &quot;stop&quot;        &quot;time_left&quot;
+[7] &quot;accept&quot;
 </code></pre>
 
 <pre><code class="r">sub(&quot;_&quot;,&quot;&quot;,names(reviews),)
 </code></pre>
 
-<pre><code>[1] &quot;id&quot;         &quot;solutionid&quot; &quot;reviewerid&quot; &quot;start&quot;      &quot;stop&quot;       &quot;timeleft&quot;   &quot;accept&quot;    
+<pre><code>[1] &quot;id&quot;         &quot;solutionid&quot; &quot;reviewerid&quot; &quot;start&quot;      &quot;stop&quot;       &quot;timeleft&quot;   &quot;accept&quot;
 </code></pre>
 
   </article>
@@ -306,8 +306,8 @@ sub(&quot;_&quot;,&quot;&quot;,testName)
 </code></pre>
 
 <pre><code>
-FALSE  TRUE 
-   77     3 
+FALSE  TRUE
+   77     3
 </code></pre>
 
 <pre><code class="r">cameraData2 &lt;- cameraData[!grepl(&quot;Alameda&quot;,cameraData$intersection),]
@@ -401,7 +401,7 @@ nchar(&quot;Jeffrey Leek&quot;)
   </hgroup>
   <article>
     <ul>
-<li>Names of variables should be 
+<li>Names of variables should be
 
 <ul>
 <li>All lower case when possible</li>
@@ -425,8 +425,8 @@ nchar(&quot;Jeffrey Leek&quot;)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

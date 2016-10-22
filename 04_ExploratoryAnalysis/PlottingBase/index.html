@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -375,7 +375,7 @@ with(subset(airquality, Month == 5), points(Wind, Ozone, col = &quot;blue&quot;)
     <h2>Base Plot with Annotation</h2>
   </hgroup>
   <article>
-    <pre><code class="r">with(airquality, plot(Wind, Ozone, main = &quot;Ozone and Wind in New York City&quot;, 
+    <pre><code class="r">with(airquality, plot(Wind, Ozone, main = &quot;Ozone and Wind in New York City&quot;,
     type = &quot;n&quot;))
 with(subset(airquality, Month == 5), points(Wind, Ozone, col = &quot;blue&quot;))
 with(subset(airquality, Month != 5), points(Wind, Ozone, col = &quot;red&quot;))
@@ -393,7 +393,7 @@ legend(&quot;topright&quot;, pch = 1, col = c(&quot;blue&quot;, &quot;red&quot;)
     <h2>Base Plot with Regression Line</h2>
   </hgroup>
   <article>
-    <pre><code class="r">with(airquality, plot(Wind, Ozone, main = &quot;Ozone and Wind in New York City&quot;, 
+    <pre><code class="r">with(airquality, plot(Wind, Ozone, main = &quot;Ozone and Wind in New York City&quot;,
     pch = 20))
 model &lt;- lm(Ozone ~ Wind, airquality)
 abline(model, lwd = 2)
@@ -469,8 +469,8 @@ of control over plotting</p></li>
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

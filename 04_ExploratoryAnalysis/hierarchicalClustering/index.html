@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -213,28 +213,28 @@ dist(dataFrame)
 </code></pre>
 
 <pre><code>##          1       2       3       4       5       6       7       8       9
-## 2  0.34121                                                                
-## 3  0.57494 0.24103                                                        
-## 4  0.26382 0.52579 0.71862                                                
-## 5  1.69425 1.35818 1.11953 1.80667                                        
-## 6  1.65813 1.31960 1.08339 1.78081 0.08150                                
-## 7  1.49823 1.16621 0.92569 1.60132 0.21110 0.21667                        
-## 8  1.99149 1.69093 1.45649 2.02849 0.61704 0.69792 0.65063                
-## 9  2.13630 1.83168 1.67836 2.35676 1.18350 1.11500 1.28583 1.76461        
+## 2  0.34121
+## 3  0.57494 0.24103
+## 4  0.26382 0.52579 0.71862
+## 5  1.69425 1.35818 1.11953 1.80667
+## 6  1.65813 1.31960 1.08339 1.78081 0.08150
+## 7  1.49823 1.16621 0.92569 1.60132 0.21110 0.21667
+## 8  1.99149 1.69093 1.45649 2.02849 0.61704 0.69792 0.65063
+## 9  2.13630 1.83168 1.67836 2.35676 1.18350 1.11500 1.28583 1.76461
 ## 10 2.06420 1.76999 1.63110 2.29239 1.23848 1.16550 1.32063 1.83518 0.14090
 ## 11 2.14702 1.85183 1.71074 2.37462 1.28154 1.21077 1.37370 1.86999 0.11624
 ## 12 2.05664 1.74663 1.58659 2.27232 1.07701 1.00777 1.17740 1.66224 0.10849
 ##         10      11
-## 2                 
-## 3                 
-## 4                 
-## 5                 
-## 6                 
-## 7                 
-## 8                 
-## 9                 
-## 10                
-## 11 0.08318        
+## 2
+## 3
+## 4
+## 5
+## 6
+## 7
+## 8
+## 9
+## 10
+## 11 0.08318
 ## 12 0.19129 0.20803
 </code></pre>
 
@@ -297,7 +297,7 @@ plot(hClustering)
     <h2>Prettier dendrograms</h2>
   </hgroup>
   <article>
-    <pre><code class="r">myplclust &lt;- function(hclust, lab = hclust$labels, lab.col = rep(1, length(hclust$labels)), 
+    <pre><code class="r">myplclust &lt;- function(hclust, lab = hclust$labels, lab.col = rep(1, length(hclust$labels)),
     hang = 0.1, ...) {
     ## modifiction of plclust for plotting hclust objects *in colour*!  Copyright
     ## Eva KF Chan 2009 Arguments: hclust: hclust object lab: a character vector
@@ -312,7 +312,7 @@ plot(hClustering)
     y &lt;- y[order(x)]
     x &lt;- x[order(x)]
     plot(hclust, labels = FALSE, hang = hang, ...)
-    text(x = x, y = y[hclust$order] - (max(hclust$height) * hang), labels = lab[hclust$order], 
+    text(x = x, y = y[hclust$order] - (max(hclust$height) * hang), labels = lab[hclust$order],
         col = lab.col[hclust$order], srt = 90, adj = c(1, 0.5), xpd = NA, ...)
 }
 </code></pre>
@@ -421,8 +421,8 @@ heatmap(dataMatrix)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

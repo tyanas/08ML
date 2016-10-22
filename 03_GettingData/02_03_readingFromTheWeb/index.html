@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -117,9 +117,9 @@ xpathSApply(html, &quot;//title&quot;, xmlValue)
 <pre><code class="r">xpathSApply(html, &quot;//td[@id=&#39;col-citedby&#39;]&quot;, xmlValue)
 </code></pre>
 
-<pre><code> [1] &quot;Cited by&quot; &quot;397&quot;      &quot;259&quot;      &quot;237&quot;      &quot;172&quot;      &quot;138&quot;      &quot;125&quot;      &quot;122&quot;     
- [9] &quot;109&quot;      &quot;101&quot;      &quot;34&quot;       &quot;26&quot;       &quot;26&quot;       &quot;24&quot;       &quot;19&quot;       &quot;13&quot;      
-[17] &quot;12&quot;       &quot;10&quot;       &quot;10&quot;       &quot;7&quot;        &quot;6&quot;       
+<pre><code> [1] &quot;Cited by&quot; &quot;397&quot;      &quot;259&quot;      &quot;237&quot;      &quot;172&quot;      &quot;138&quot;      &quot;125&quot;      &quot;122&quot;
+ [9] &quot;109&quot;      &quot;101&quot;      &quot;34&quot;       &quot;26&quot;       &quot;26&quot;       &quot;24&quot;       &quot;19&quot;       &quot;13&quot;
+[17] &quot;12&quot;       &quot;10&quot;       &quot;10&quot;       &quot;7&quot;        &quot;6&quot;
 </code></pre>
 
   </article>
@@ -155,7 +155,7 @@ pg1
 
 <pre><code>Response [http://httpbin.org/basic-auth/user/passwd]
   Status: 401
-  Content-type: 
+  Content-type:
 
 </code></pre>
 
@@ -181,14 +181,14 @@ pg2
 {
   &quot;authenticated&quot;: true,
   &quot;user&quot;: &quot;user&quot;
-} 
+}
 </code></pre>
 
 <pre><code class="r">names(pg2)
 </code></pre>
 
-<pre><code>[1] &quot;url&quot;         &quot;handle&quot;      &quot;status_code&quot; &quot;headers&quot;     &quot;cookies&quot;     &quot;content&quot;    
-[7] &quot;times&quot;       &quot;config&quot;     
+<pre><code>[1] &quot;url&quot;         &quot;handle&quot;      &quot;status_code&quot; &quot;headers&quot;     &quot;cookies&quot;     &quot;content&quot;
+[7] &quot;times&quot;       &quot;config&quot;
 </code></pre>
 
 <p><a href="http://cran.r-project.org/web/packages/httr/httr.pdf">http://cran.r-project.org/web/packages/httr/httr.pdf</a></p>
@@ -232,8 +232,8 @@ pg2 = GET(handle=google,path=&quot;search&quot;)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

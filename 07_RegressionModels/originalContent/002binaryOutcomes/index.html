@@ -9,25 +9,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/ribbons.css">
 
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -137,18 +137,18 @@ Call:
 lm(formula = ravensData$ravenWinNum ~ ravensData$ravenScore)
 
 Residuals:
-   Min     1Q Median     3Q    Max 
--0.730 -0.508  0.182  0.322  0.572 
+   Min     1Q Median     3Q    Max
+-0.730 -0.508  0.182  0.322  0.572
 
 Coefficients:
-                      Estimate Std. Error t value Pr(&gt;|t|)  
-(Intercept)            0.28503    0.25664    1.11    0.281  
+                      Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)            0.28503    0.25664    1.11    0.281
 ravensData$ravenScore  0.01590    0.00906    1.76    0.096 .
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
 Residual standard error: 0.446 on 18 degrees of freedom
-Multiple R-squared:  0.146, Adjusted R-squared:  0.0987 
+Multiple R-squared:  0.146, Adjusted R-squared:  0.0987
 F-statistic: 3.08 on 1 and 18 DF,  p-value: 0.0963
 </code></pre>
 
@@ -312,12 +312,12 @@ summary(logRegRavens)
 
 <pre><code>
 Call:
-glm(formula = ravensData$ravenWinNum ~ ravensData$ravenScore, 
+glm(formula = ravensData$ravenWinNum ~ ravensData$ravenScore,
     family = &quot;binomial&quot;)
 
-Deviance Residuals: 
-   Min      1Q  Median      3Q     Max  
--1.758  -1.100   0.530   0.806   1.495  
+Deviance Residuals:
+   Min      1Q  Median      3Q     Max
+-1.758  -1.100   0.530   0.806   1.495
 
 Coefficients:
                       Estimate Std. Error z value Pr(&gt;|z|)
@@ -359,8 +359,8 @@ Number of Fisher Scoring iterations: 5
     <pre><code class="r">exp(logRegRavens$coeff)
 </code></pre>
 
-<pre><code>          (Intercept) ravensData$ravenScore 
-               0.1864                1.1125 
+<pre><code>          (Intercept) ravensData$ravenScore
+               0.1864                1.1125
 </code></pre>
 
 <pre><code class="r">exp(confint(logRegRavens))
@@ -391,8 +391,8 @@ Response: ravensData$ravenWinNum
 
 Terms added sequentially (first to last)
 
-                      Df Deviance Resid. Df Resid. Dev Pr(&gt;Chi)  
-NULL                                     19       24.4           
+                      Df Deviance Resid. Df Resid. Dev Pr(&gt;Chi)
+NULL                                     19       24.4
 ravensData$ravenScore  1     3.54        18       20.9     0.06 .
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
@@ -455,8 +455,8 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

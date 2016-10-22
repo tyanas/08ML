@@ -9,25 +9,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/ribbons.css">
 
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -80,7 +80,7 @@ function (X, INDEX, FUN = NULL, ..., simplify = TRUE)
 [24] 3 3 3 3 3 3 3
 Levels: 1 2 3
 &gt; tapply(x, f, mean)
-        1         2         3 
+        1         2         3
 0.1144464 0.5163468 1.2463678
 </code></pre>
 
@@ -209,12 +209,12 @@ $‘3‘
   <article>
     <pre><code class="r">&gt; library(datasets)
 &gt; head(airquality)
-  Ozone Solar.R Wind Temp Month Day 
-1    41     190  7.4   67     5   1 
-2    36     118  8.0   72     5   2 
-3    12     149 12.6   74     5   3 
-4    18     313 11.5   62     5   4 
-5    NA      NA 14.3   56     5   5 
+  Ozone Solar.R Wind Temp Month Day
+1    41     190  7.4   67     5   1
+2    36     118  8.0   72     5   2
+3    12     149 12.6   74     5   3
+4    18     313 11.5   62     5   4
+5    NA      NA 14.3   56     5   5
 6    28      NA 14.9   66     5   6
 </code></pre>
 
@@ -249,7 +249,7 @@ $‘7‘
     <h2>Splitting a Data Frame</h2>
   </hgroup>
   <article>
-    <pre><code class="r">&gt; sapply(s, function(x) colMeans(x[, c(&quot;Ozone&quot;, &quot;Solar.R&quot;, &quot;Wind&quot;)])) 
+    <pre><code class="r">&gt; sapply(s, function(x) colMeans(x[, c(&quot;Ozone&quot;, &quot;Solar.R&quot;, &quot;Wind&quot;)]))
                5         6          7        8        9
 Ozone         NA        NA         NA       NA       NA
 Solar.R       NA 190.16667 216.483871       NA 167.4333
@@ -257,9 +257,9 @@ Wind    11.62258  10.26667   8.941935 8.793548  10.1800
 
 &gt; sapply(s, function(x) colMeans(x[, c(&quot;Ozone&quot;, &quot;Solar.R&quot;, &quot;Wind&quot;)],
                                  na.rm = TRUE))
-                  5            6             7            8           9 
-Ozone      23.61538     29.44444     59.115385    59.961538   31.44828 
-Solar.R   181.29630    190.16667    216.483871   171.857143  167.43333 
+                  5            6             7            8           9
+Ozone      23.61538     29.44444     59.115385    59.961538   31.44828
+Solar.R   181.29630    190.16667    216.483871   171.857143  167.43333
 Wind       11.62258     10.26667      8.941935     8.793548   10.18000
 </code></pre>
 
@@ -340,8 +340,8 @@ List of 6
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

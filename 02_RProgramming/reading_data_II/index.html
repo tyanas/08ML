@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -83,7 +83,7 @@ structure(list(a = 1,
 &gt; dput(y, file = &quot;y.R&quot;)
 &gt; new.y &lt;- dget(&quot;y.R&quot;)
 &gt; new.y
-   a  b 
+   a  b
 1  1  a
 </code></pre>
 
@@ -100,11 +100,11 @@ structure(list(a = 1,
 
 <pre><code class="r">&gt; x &lt;- &quot;foo&quot;
 &gt; y &lt;- data.frame(a = 1, b = &quot;a&quot;)
-&gt; dump(c(&quot;x&quot;, &quot;y&quot;), file = &quot;data.R&quot;) 
+&gt; dump(c(&quot;x&quot;, &quot;y&quot;), file = &quot;data.R&quot;)
 &gt; rm(x, y)
 &gt; source(&quot;data.R&quot;)
 &gt; y
-  a  b 
+  a  b
 1 1  a
 &gt; x
 [1] &quot;foo&quot;
@@ -184,8 +184,8 @@ close(con)
     <h2>Reading Lines of a Text File</h2>
   </hgroup>
   <article>
-    <pre><code class="r">&gt; con &lt;- gzfile(&quot;words.gz&quot;) 
-&gt; x &lt;- readLines(con, 10) 
+    <pre><code class="r">&gt; con &lt;- gzfile(&quot;words.gz&quot;)
+&gt; x &lt;- readLines(con, 10)
 &gt; x
  [1] &quot;1080&quot;     &quot;10-point&quot; &quot;10th&quot;     &quot;11-point&quot;
  [5] &quot;12-point&quot; &quot;16-point&quot; &quot;18-point&quot; &quot;1st&quot;
@@ -224,8 +224,8 @@ x &lt;- readLines(con)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

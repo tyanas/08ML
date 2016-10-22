@@ -9,25 +9,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/ribbons.css">
 
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -73,8 +73,8 @@ Call:
 lm(formula = galton$child ~ galton$parent)
 
 Coefficients:
-  (Intercept)  galton$parent  
-       23.942          0.646  
+  (Intercept)  galton$parent
+       23.942          0.646
 </code></pre>
 
   </article>
@@ -237,18 +237,18 @@ Call:
 lm(formula = sampleGalton4$child ~ sampleGalton4$parent)
 
 Residuals:
-   Min     1Q Median     3Q    Max 
--4.360 -1.610 -0.289  2.020  4.387 
+   Min     1Q Median     3Q    Max
+-4.360 -1.610 -0.289  2.020  4.387
 
 Coefficients:
-                     Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)            15.863     11.773    1.35     0.18    
+                     Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)            15.863     11.773    1.35     0.18
 sampleGalton4$parent    0.770      0.174    4.43  5.4e-05 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
 Residual standard error: 2.29 on 48 degrees of freedom
-Multiple R-squared:  0.291, Adjusted R-squared:  0.276 
+Multiple R-squared:  0.291, Adjusted R-squared:  0.276
 F-statistic: 19.7 on 1 and 48 DF,  p-value: 5.36e-05
 </code></pre>
 
@@ -411,8 +411,8 @@ lines(rep(lm1$coeff[2],100),seq(0,100,length=100),lwd=3)
     <pre><code class="r">sampleLm4$coeff
 </code></pre>
 
-<pre><code>         (Intercept) sampleGalton4$parent 
-             15.8632               0.7698 
+<pre><code>         (Intercept) sampleGalton4$parent
+             15.8632               0.7698
 </code></pre>
 
 <pre><code class="r">confint(sampleLm4,level=0.95)
@@ -433,8 +433,8 @@ sampleGalton4$parent  0.4208  1.119
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

@@ -9,25 +9,25 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/ribbons.css">
 
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -297,24 +297,24 @@ abline(c(lmBoth$coeff[1] + lmBoth$coeff[3],lmBoth$coeff[2] +lmBoth$coeff[4]),col
 
 <pre><code>
 Call:
-lm(formula = hunger$Numeric ~ hunger$Year + hunger$Sex + hunger$Sex * 
+lm(formula = hunger$Numeric ~ hunger$Year + hunger$Sex + hunger$Sex *
     hunger$Year)
 
 Residuals:
-   Min     1Q Median     3Q    Max 
--25.09 -11.61  -2.15   7.29  46.15 
+   Min     1Q Median     3Q    Max
+-25.09 -11.61  -2.15   7.29  46.15
 
 Coefficients:
-                           Estimate Std. Error t value Pr(&gt;|t|)   
+                           Estimate Std. Error t value Pr(&gt;|t|)
 (Intercept)                522.4721   191.8987    2.72   0.0066 **
 hunger$Year                 -0.2527     0.0959   -2.63   0.0086 **
-hunger$SexMale              58.3730   271.3858    0.22   0.8297   
-hunger$Year:hunger$SexMale  -0.0282     0.1357   -0.21   0.8353   
+hunger$SexMale              58.3730   271.3858    0.22   0.8297
+hunger$Year:hunger$SexMale  -0.0282     0.1357   -0.21   0.8353
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
 Residual standard error: 13.5 on 854 degrees of freedom
-Multiple R-squared:  0.0228,    Adjusted R-squared:  0.0193 
+Multiple R-squared:  0.0228,    Adjusted R-squared:  0.0193
 F-statistic: 6.64 on 3 and 854 DF,  p-value: 0.000197
 </code></pre>
 
@@ -351,8 +351,8 @@ F-statistic: 6.64 on 3 and 854 DF,  p-value: 0.000197
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

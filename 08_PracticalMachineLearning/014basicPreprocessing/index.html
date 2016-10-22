@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -94,7 +94,7 @@ hist(training$capitalAve,main=&quot;&quot;,xlab=&quot;ave. capital run length&qu
   </hgroup>
   <article>
     <pre><code class="r">trainCapAve &lt;- training$capitalAve
-trainCapAveS &lt;- (trainCapAve  - mean(trainCapAve))/sd(trainCapAve) 
+trainCapAveS &lt;- (trainCapAve  - mean(trainCapAve))/sd(trainCapAve)
 mean(trainCapAveS)
 </code></pre>
 
@@ -117,7 +117,7 @@ mean(trainCapAveS)
   </hgroup>
   <article>
     <pre><code class="r">testCapAve &lt;- testing$capitalAve
-testCapAveS &lt;- (testCapAve  - mean(trainCapAve))/sd(trainCapAve) 
+testCapAveS &lt;- (testCapAve  - mean(trainCapAve))/sd(trainCapAve)
 mean(testCapAveS)
 </code></pre>
 
@@ -192,17 +192,17 @@ modelFit
 
 <pre><code>3451 samples
   57 predictors
-   2 classes: &#39;nonspam&#39;, &#39;spam&#39; 
+   2 classes: &#39;nonspam&#39;, &#39;spam&#39;
 
-Pre-processing: centered, scaled 
-Resampling: Bootstrap (25 reps) 
+Pre-processing: centered, scaled
+Resampling: Bootstrap (25 reps)
 
-Summary of sample sizes: 3451, 3451, 3451, 3451, 3451, 3451, ... 
+Summary of sample sizes: 3451, 3451, 3451, 3451, 3451, 3451, ...
 
 Resampling results
 
   Accuracy  Kappa  Accuracy SD  Kappa SD
-  0.9       0.8    0.007        0.01    
+  0.9       0.8    0.007        0.01
 
 
 </code></pre>
@@ -260,22 +260,22 @@ capAveTruth &lt;- (capAveTruth-mean(capAveTruth))/sd(capAveTruth)
     <pre><code class="r">quantile(capAve - capAveTruth)
 </code></pre>
 
-<pre><code>        0%        25%        50%        75%       100% 
--1.1324388 -0.0030842 -0.0015074 -0.0007467  0.2155789 
+<pre><code>        0%        25%        50%        75%       100%
+-1.1324388 -0.0030842 -0.0015074 -0.0007467  0.2155789
 </code></pre>
 
 <pre><code class="r">quantile((capAve - capAveTruth)[selectNA])
 </code></pre>
 
-<pre><code>        0%        25%        50%        75%       100% 
--0.9243043 -0.0125489 -0.0001968  0.0194524  0.2155789 
+<pre><code>        0%        25%        50%        75%       100%
+-0.9243043 -0.0125489 -0.0001968  0.0194524  0.2155789
 </code></pre>
 
 <pre><code class="r">quantile((capAve - capAveTruth)[!selectNA])
 </code></pre>
 
-<pre><code>        0%        25%        50%        75%       100% 
--1.1324388 -0.0030033 -0.0015115 -0.0007938 -0.0001968 
+<pre><code>        0%        25%        50%        75%       100%
+-1.1324388 -0.0030033 -0.0015115 -0.0007938 -0.0001968
 </code></pre>
 
   </article>
@@ -306,8 +306,8 @@ capAveTruth &lt;- (capAveTruth-mean(capAveTruth))/sd(capAveTruth)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

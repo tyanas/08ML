@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -144,18 +144,18 @@ Call:
 lm(formula = eruptions ~ waiting, data = trainFaith)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--1.2699 -0.3479  0.0398  0.3659  1.0502 
+    Min      1Q  Median      3Q     Max
+-1.2699 -0.3479  0.0398  0.3659  1.0502
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
+            Estimate Std. Error t value Pr(&gt;|t|)
 (Intercept) -1.79274    0.22787   -7.87    1e-12 ***
 waiting      0.07390    0.00315   23.47   &lt;2e-16 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
 Residual standard error: 0.495 on 135 degrees of freedom
-Multiple R-squared:  0.803, Adjusted R-squared:  0.802 
+Multiple R-squared:  0.803, Adjusted R-squared:  0.802
 F-statistic:  551 on 1 and 135 DF,  p-value: &lt;2e-16
 </code></pre>
 
@@ -188,16 +188,16 @@ lines(trainFaith$waiting,lm1$fitted,lwd=3)
 <pre><code class="r">coef(lm1)[1] + coef(lm1)[2]*80
 </code></pre>
 
-<pre><code>(Intercept) 
-      4.119 
+<pre><code>(Intercept)
+      4.119
 </code></pre>
 
 <pre><code class="r">newdata &lt;- data.frame(waiting=80)
 predict(lm1,newdata)
 </code></pre>
 
-<pre><code>    1 
-4.119 
+<pre><code>    1
+4.119
 </code></pre>
 
   </article>
@@ -277,18 +277,18 @@ Call:
 lm(formula = modFormula, data = data)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--1.2699 -0.3479  0.0398  0.3659  1.0502 
+    Min      1Q  Median      3Q     Max
+-1.2699 -0.3479  0.0398  0.3659  1.0502
 
 Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
+            Estimate Std. Error t value Pr(&gt;|t|)
 (Intercept) -1.79274    0.22787   -7.87    1e-12 ***
 waiting      0.07390    0.00315   23.47   &lt;2e-16 ***
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 
 Residual standard error: 0.495 on 135 degrees of freedom
-Multiple R-squared:  0.803, Adjusted R-squared:  0.802 
+Multiple R-squared:  0.803, Adjusted R-squared:  0.802
 F-statistic:  551 on 1 and 135 DF,  p-value: &lt;2e-16
 </code></pre>
 
@@ -317,8 +317,8 @@ F-statistic:  551 on 1 and 135 DF,  p-value: &lt;2e-16
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

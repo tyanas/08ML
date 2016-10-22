@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -133,7 +133,7 @@ national standard for fine particle pollution?</p></li>
   <article>
     <p>Annual average PM2.5 averaged over the period 2008 through 2010</p>
 
-<pre><code class="r">pollution &lt;- read.csv(&quot;data/avgpm25.csv&quot;, colClasses = c(&quot;numeric&quot;, &quot;character&quot;, 
+<pre><code class="r">pollution &lt;- read.csv(&quot;data/avgpm25.csv&quot;, colClasses = c(&quot;numeric&quot;, &quot;character&quot;,
     &quot;factor&quot;, &quot;numeric&quot;, &quot;numeric&quot;))
 head(pollution)
 </code></pre>
@@ -180,7 +180,7 @@ head(pollution)
     <pre><code class="r">summary(pollution$pm25)
 </code></pre>
 
-<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
 ##    3.38    8.55   10.00    9.84   11.40   18.40
 </code></pre>
 
@@ -427,8 +427,8 @@ with(subset(pollution, region == &quot;east&quot;), plot(latitude, pm25, main = 
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -82,10 +82,10 @@ name of a function) <code>FUN</code>; (3) other arguments via its
 <pre><code class="r">lapply
 </code></pre>
 
-<pre><code>## function (X, FUN, ...) 
+<pre><code>## function (X, FUN, ...)
 ## {
 ##     FUN &lt;- match.fun(FUN)
-##     if (!is.vector(X) || is.object(X)) 
+##     if (!is.vector(X) || is.object(X))
 ##         X &lt;- as.list(X)
 ##     .Internal(lapply(X, FUN))
 ## }
@@ -112,7 +112,7 @@ lapply(x, mean)
 
 <pre><code>## $a
 ## [1] 3
-## 
+##
 ## $b
 ## [1] 0.4671
 </code></pre>
@@ -132,13 +132,13 @@ lapply(x, mean)
 
 <pre><code>## $a
 ## [1] 2.5
-## 
+##
 ## $b
 ## [1] 0.5261
-## 
+##
 ## $c
 ## [1] 1.421
-## 
+##
 ## $d
 ## [1] 4.927
 </code></pre>
@@ -202,7 +202,7 @@ lapply(x, mean)
   <article>
     <p><code>lapply</code> and friends make heavy use of <em>anonymous</em> functions.</p>
 
-<pre><code class="r">&gt; x &lt;- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2)) 
+<pre><code class="r">&gt; x &lt;- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2))
 &gt; x
 $a
      [,1] [,2]
@@ -285,7 +285,7 @@ $d
     <h2>sapply</h2>
   </hgroup>
   <article>
-    <pre><code class="r">&gt; sapply(x, mean) 
+    <pre><code class="r">&gt; sapply(x, mean)
          a          b          c          d
 2.50000000 0.06082667 1.46708277 5.07474950
 
@@ -303,8 +303,8 @@ In mean.default(x) : argument is not numeric or logical: returning NA
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -96,34 +96,34 @@ jsonData &lt;- fromJSON(&quot;https://api.github.com/users/jtleek/repos&quot;)
 names(jsonData)
 </code></pre>
 
-<pre><code> [1] &quot;id&quot;                &quot;name&quot;              &quot;full_name&quot;         &quot;owner&quot;            
- [5] &quot;private&quot;           &quot;html_url&quot;          &quot;description&quot;       &quot;fork&quot;             
+<pre><code> [1] &quot;id&quot;                &quot;name&quot;              &quot;full_name&quot;         &quot;owner&quot;
+ [5] &quot;private&quot;           &quot;html_url&quot;          &quot;description&quot;       &quot;fork&quot;
  [9] &quot;url&quot;               &quot;forks_url&quot;         &quot;keys_url&quot;          &quot;collaborators_url&quot;
-[13] &quot;teams_url&quot;         &quot;hooks_url&quot;         &quot;issue_events_url&quot;  &quot;events_url&quot;       
-[17] &quot;assignees_url&quot;     &quot;branches_url&quot;      &quot;tags_url&quot;          &quot;blobs_url&quot;        
-[21] &quot;git_tags_url&quot;      &quot;git_refs_url&quot;      &quot;trees_url&quot;         &quot;statuses_url&quot;     
-[25] &quot;languages_url&quot;     &quot;stargazers_url&quot;    &quot;contributors_url&quot;  &quot;subscribers_url&quot;  
-[29] &quot;subscription_url&quot;  &quot;commits_url&quot;       &quot;git_commits_url&quot;   &quot;comments_url&quot;     
-[33] &quot;issue_comment_url&quot; &quot;contents_url&quot;      &quot;compare_url&quot;       &quot;merges_url&quot;       
-[37] &quot;archive_url&quot;       &quot;downloads_url&quot;     &quot;issues_url&quot;        &quot;pulls_url&quot;        
-[41] &quot;milestones_url&quot;    &quot;notifications_url&quot; &quot;labels_url&quot;        &quot;releases_url&quot;     
-[45] &quot;created_at&quot;        &quot;updated_at&quot;        &quot;pushed_at&quot;         &quot;git_url&quot;          
-[49] &quot;ssh_url&quot;           &quot;clone_url&quot;         &quot;svn_url&quot;           &quot;homepage&quot;         
-[53] &quot;size&quot;              &quot;stargazers_count&quot;  &quot;watchers_count&quot;    &quot;language&quot;         
-[57] &quot;has_issues&quot;        &quot;has_downloads&quot;     &quot;has_wiki&quot;          &quot;forks_count&quot;      
-[61] &quot;mirror_url&quot;        &quot;open_issues_count&quot; &quot;forks&quot;             &quot;open_issues&quot;      
-[65] &quot;watchers&quot;          &quot;default_branch&quot;    &quot;master_branch&quot;    
+[13] &quot;teams_url&quot;         &quot;hooks_url&quot;         &quot;issue_events_url&quot;  &quot;events_url&quot;
+[17] &quot;assignees_url&quot;     &quot;branches_url&quot;      &quot;tags_url&quot;          &quot;blobs_url&quot;
+[21] &quot;git_tags_url&quot;      &quot;git_refs_url&quot;      &quot;trees_url&quot;         &quot;statuses_url&quot;
+[25] &quot;languages_url&quot;     &quot;stargazers_url&quot;    &quot;contributors_url&quot;  &quot;subscribers_url&quot;
+[29] &quot;subscription_url&quot;  &quot;commits_url&quot;       &quot;git_commits_url&quot;   &quot;comments_url&quot;
+[33] &quot;issue_comment_url&quot; &quot;contents_url&quot;      &quot;compare_url&quot;       &quot;merges_url&quot;
+[37] &quot;archive_url&quot;       &quot;downloads_url&quot;     &quot;issues_url&quot;        &quot;pulls_url&quot;
+[41] &quot;milestones_url&quot;    &quot;notifications_url&quot; &quot;labels_url&quot;        &quot;releases_url&quot;
+[45] &quot;created_at&quot;        &quot;updated_at&quot;        &quot;pushed_at&quot;         &quot;git_url&quot;
+[49] &quot;ssh_url&quot;           &quot;clone_url&quot;         &quot;svn_url&quot;           &quot;homepage&quot;
+[53] &quot;size&quot;              &quot;stargazers_count&quot;  &quot;watchers_count&quot;    &quot;language&quot;
+[57] &quot;has_issues&quot;        &quot;has_downloads&quot;     &quot;has_wiki&quot;          &quot;forks_count&quot;
+[61] &quot;mirror_url&quot;        &quot;open_issues_count&quot; &quot;forks&quot;             &quot;open_issues&quot;
+[65] &quot;watchers&quot;          &quot;default_branch&quot;    &quot;master_branch&quot;
 </code></pre>
 
 <pre><code class="r">jsonData$name
 </code></pre>
 
-<pre><code> [1] &quot;ballgown&quot;       &quot;dataanalysis&quot;   &quot;datascientist&quot;  &quot;datasharing&quot;    &quot;derfinder&quot;     
- [6] &quot;derfinder-1&quot;    &quot;DSM&quot;            &quot;EDA-Project&quot;    &quot;futureofstats&quot;  &quot;googleCite&quot;    
-[11] &quot;graduate&quot;       &quot;healthvis&quot;      &quot;jhsph753&quot;       &quot;jhsph753and4&quot;   &quot;leekasso&quot;      
-[16] &quot;modules&quot;        &quot;rdsmGeneSig&quot;    &quot;reviews&quot;        &quot;rfitbit&quot;        &quot;rpackages&quot;     
-[21] &quot;sva&quot;            &quot;swfdr&quot;          &quot;talks&quot;          &quot;testrepository&quot; &quot;tornado&quot;       
-[26] &quot;tsp-devel&quot;      &quot;tspreg&quot;        
+<pre><code> [1] &quot;ballgown&quot;       &quot;dataanalysis&quot;   &quot;datascientist&quot;  &quot;datasharing&quot;    &quot;derfinder&quot;
+ [6] &quot;derfinder-1&quot;    &quot;DSM&quot;            &quot;EDA-Project&quot;    &quot;futureofstats&quot;  &quot;googleCite&quot;
+[11] &quot;graduate&quot;       &quot;healthvis&quot;      &quot;jhsph753&quot;       &quot;jhsph753and4&quot;   &quot;leekasso&quot;
+[16] &quot;modules&quot;        &quot;rdsmGeneSig&quot;    &quot;reviews&quot;        &quot;rfitbit&quot;        &quot;rpackages&quot;
+[21] &quot;sva&quot;            &quot;swfdr&quot;          &quot;talks&quot;          &quot;testrepository&quot; &quot;tornado&quot;
+[26] &quot;tsp-devel&quot;      &quot;tspreg&quot;
 </code></pre>
 
   </article>
@@ -138,11 +138,11 @@ names(jsonData)
     <pre><code class="r">names(jsonData$owner)
 </code></pre>
 
-<pre><code> [1] &quot;login&quot;               &quot;id&quot;                  &quot;avatar_url&quot;          &quot;gravatar_id&quot;        
- [5] &quot;url&quot;                 &quot;html_url&quot;            &quot;followers_url&quot;       &quot;following_url&quot;      
- [9] &quot;gists_url&quot;           &quot;starred_url&quot;         &quot;subscriptions_url&quot;   &quot;organizations_url&quot;  
-[13] &quot;repos_url&quot;           &quot;events_url&quot;          &quot;received_events_url&quot; &quot;type&quot;               
-[17] &quot;site_admin&quot;         
+<pre><code> [1] &quot;login&quot;               &quot;id&quot;                  &quot;avatar_url&quot;          &quot;gravatar_id&quot;
+ [5] &quot;url&quot;                 &quot;html_url&quot;            &quot;followers_url&quot;       &quot;following_url&quot;
+ [9] &quot;gists_url&quot;           &quot;starred_url&quot;         &quot;subscriptions_url&quot;   &quot;organizations_url&quot;
+[13] &quot;repos_url&quot;           &quot;events_url&quot;          &quot;received_events_url&quot; &quot;type&quot;
+[17] &quot;site_admin&quot;
 </code></pre>
 
 <pre><code class="r">jsonData$owner$login
@@ -1269,8 +1269,8 @@ head(iris2)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

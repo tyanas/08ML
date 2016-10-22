@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -110,7 +110,7 @@
   </hgroup>
   <article>
     <pre><code class="r">printmessage &lt;- function(x) {
-    if (x &gt; 0) 
+    if (x &gt; 0)
         print(&quot;x is greater than zero&quot;) else print(&quot;x is less than or equal to zero&quot;)
     invisible(x)
 }
@@ -156,8 +156,8 @@ printmessage(1)
   </hgroup>
   <article>
     <pre><code class="r">printmessage2 &lt;- function(x) {
-    if (is.na(x)) 
-        print(&quot;x is a missing value!&quot;) else if (x &gt; 0) 
+    if (is.na(x))
+        print(&quot;x is a missing value!&quot;) else if (x &gt; 0)
         print(&quot;x is greater than zero&quot;) else print(&quot;x is less than or equal to zero&quot;)
     invisible(x)
 }
@@ -227,7 +227,7 @@ x &lt;- log(-1)
 Error in mean(x) : object &#39;x&#39; not found
 &gt; traceback()
 1: mean(x)
-&gt; 
+&gt;
 </code></pre>
 
   </article>
@@ -269,9 +269,9 @@ debug: {
     cl &lt;- match.call()
     ...
     if (!qr)
-        z$qr &lt;- NULL 
+        z$qr &lt;- NULL
     z
-} 
+}
 Browse[2]&gt;
 </code></pre>
 
@@ -352,8 +352,8 @@ Selection:
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

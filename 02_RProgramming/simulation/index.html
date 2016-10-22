@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -110,12 +110,12 @@ Normal distribution, then <code>pnorm(q)</code> = \(\Phi(q)\) and <code>qnorm(p)
     <h2>Generating Random Numbers</h2>
   </hgroup>
   <article>
-    <pre><code class="r">&gt; x &lt;- rnorm(10) 
+    <pre><code class="r">&gt; x &lt;- rnorm(10)
 &gt; x
  [1] 1.38380206 0.48772671 0.53403109 0.66721944
  [5] 0.01585029 0.37945986 1.31096736 0.55330472
  [9] 1.22090852 0.45236742
-&gt; x &lt;- rnorm(10, 20, 2) 
+&gt; x &lt;- rnorm(10, 20, 2)
 &gt; x
  [1] 23.38812 20.16846 21.87999 20.73813 19.59020
  [6] 18.73439 18.31721 22.51748 20.36966 21.04371
@@ -302,7 +302,7 @@ where \(\varepsilon\sim\mathcal{N}(0, 2^2)\). Assume
 &gt; sample(letters, 5)
 [1] &quot;q&quot; &quot;b&quot; &quot;e&quot; &quot;x&quot; &quot;p&quot;
 &gt; sample(1:10)  ## permutation
- [1] 4 710 6 9 2 8 3 1 5 
+ [1] 4 710 6 9 2 8 3 1 5
 &gt; sample(1:10)
  [1]  2  3  4  1  9  5 10  8  6  7
 &gt; sample(1:10, replace = TRUE)  ## Sample w/replacement
@@ -335,8 +335,8 @@ where \(\varepsilon\sim\mathcal{N}(0, 2^2)\). Assume
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

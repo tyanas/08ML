@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -184,12 +184,12 @@ class(x)
     <p>You can use mathematical operations on dates and times. Well, really just + and -. You can do comparisons too (i.e. ==, &lt;=)</p>
 
 <pre><code class="r">x &lt;- as.Date(&quot;2012-01-01&quot;)
-y &lt;- strptime(&quot;9 Jan 2011 11:34:21&quot;, &quot;%d %b %Y %H:%M:%S&quot;) 
+y &lt;- strptime(&quot;9 Jan 2011 11:34:21&quot;, &quot;%d %b %Y %H:%M:%S&quot;)
 x-y
 ## Warning: Incompatible methods (&quot;-.Date&quot;,
 ## &quot;-.POSIXt&quot;) for &quot;-&quot;
 ## Error: non-numeric argument to binary operator
-x &lt;- as.POSIXlt(x) 
+x &lt;- as.POSIXlt(x)
 x-y
 ## Time difference of 356.3 days
 </code></pre>
@@ -205,11 +205,11 @@ x-y
   <article>
     <p>Even keeps track of leap years, leap seconds, daylight savings, and time zones.</p>
 
-<pre><code class="r">x &lt;- as.Date(&quot;2012-03-01&quot;) y &lt;- as.Date(&quot;2012-02-28&quot;) 
+<pre><code class="r">x &lt;- as.Date(&quot;2012-03-01&quot;) y &lt;- as.Date(&quot;2012-02-28&quot;)
 x-y
 ## Time difference of 2 days
 x &lt;- as.POSIXct(&quot;2012-10-25 01:00:00&quot;)
-y &lt;- as.POSIXct(&quot;2012-10-25 06:00:00&quot;, tz = &quot;GMT&quot;) 
+y &lt;- as.POSIXct(&quot;2012-10-25 06:00:00&quot;, tz = &quot;GMT&quot;)
 y-x
 ## Time difference of 1 hours
 </code></pre>
@@ -238,8 +238,8 @@ y-x
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

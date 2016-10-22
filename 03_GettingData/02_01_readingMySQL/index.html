@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/tomorrow.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -56,7 +56,7 @@
     <ul>
 <li>Free and widely used open source database software</li>
 <li>Widely used in internet based applications</li>
-<li>Data are structured in 
+<li>Data are structured in
 
 <ul>
 <li>Databases</li>
@@ -106,7 +106,7 @@
   <article>
     <ul>
 <li>On a Mac: <code>install.packages(&quot;RMySQL&quot;)</code></li>
-<li>On Windows: 
+<li>On Windows:
 
 <ul>
 <li>Official instructions - <a href="http://biostat.mc.vanderbilt.edu/wiki/Main/RMySQL">http://biostat.mc.vanderbilt.edu/wiki/Main/RMySQL</a> (may be useful for Mac/UNIX users as well)</li>
@@ -149,7 +149,7 @@
     <h2>Connecting and listing databases</h2>
   </hgroup>
   <article>
-    <pre><code class="r">ucscDb &lt;- dbConnect(MySQL(),user=&quot;genome&quot;, 
+    <pre><code class="r">ucscDb &lt;- dbConnect(MySQL(),user=&quot;genome&quot;,
                     host=&quot;genome-mysql.cse.ucsc.edu&quot;)
 result &lt;- dbGetQuery(ucscDb,&quot;show databases;&quot;); dbDisconnect(ucscDb);
 </code></pre>
@@ -364,7 +364,7 @@ length(allTables)
 <pre><code class="r">allTables[1:5]
 </code></pre>
 
-<pre><code>[1] &quot;HInv&quot;         &quot;HInvGeneMrna&quot; &quot;acembly&quot;      &quot;acemblyClass&quot; &quot;acemblyPep&quot;  
+<pre><code>[1] &quot;HInv&quot;         &quot;HInvGeneMrna&quot; &quot;acembly&quot;      &quot;acemblyClass&quot; &quot;acemblyPep&quot;
 </code></pre>
 
   </article>
@@ -379,10 +379,10 @@ length(allTables)
     <pre><code class="r">dbListFields(hg19,&quot;affyU133Plus2&quot;)
 </code></pre>
 
-<pre><code> [1] &quot;bin&quot;         &quot;matches&quot;     &quot;misMatches&quot;  &quot;repMatches&quot;  &quot;nCount&quot;      &quot;qNumInsert&quot; 
- [7] &quot;qBaseInsert&quot; &quot;tNumInsert&quot;  &quot;tBaseInsert&quot; &quot;strand&quot;      &quot;qName&quot;       &quot;qSize&quot;      
-[13] &quot;qStart&quot;      &quot;qEnd&quot;        &quot;tName&quot;       &quot;tSize&quot;       &quot;tStart&quot;      &quot;tEnd&quot;       
-[19] &quot;blockCount&quot;  &quot;blockSizes&quot;  &quot;qStarts&quot;     &quot;tStarts&quot;    
+<pre><code> [1] &quot;bin&quot;         &quot;matches&quot;     &quot;misMatches&quot;  &quot;repMatches&quot;  &quot;nCount&quot;      &quot;qNumInsert&quot;
+ [7] &quot;qBaseInsert&quot; &quot;tNumInsert&quot;  &quot;tBaseInsert&quot; &quot;strand&quot;      &quot;qName&quot;       &quot;qSize&quot;
+[13] &quot;qStart&quot;      &quot;qEnd&quot;        &quot;tName&quot;       &quot;tSize&quot;       &quot;tStart&quot;      &quot;tEnd&quot;
+[19] &quot;blockCount&quot;  &quot;blockSizes&quot;  &quot;qStarts&quot;     &quot;tStarts&quot;
 </code></pre>
 
 <pre><code class="r">dbGetQuery(hg19, &quot;select count(*) from affyU133Plus2&quot;)
@@ -455,8 +455,8 @@ head(affyData)
 affyMis &lt;- fetch(query); quantile(affyMis$misMatches)
 </code></pre>
 
-<pre><code>  0%  25%  50%  75% 100% 
-   1    1    2    2    3 
+<pre><code>  0%  25%  50%  75% 100%
+   1    1    2    2    3
 </code></pre>
 
 <pre><code class="r">affyMisSmall &lt;- fetch(query,n=10); dbClearResult(query);
@@ -514,8 +514,8 @@ affyMis &lt;- fetch(query); quantile(affyMis$misMatches)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->

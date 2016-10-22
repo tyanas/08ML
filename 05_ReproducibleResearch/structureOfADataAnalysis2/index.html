@@ -9,15 +9,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="../../libraries/frameworks/io2012/phone.css" 
+  <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/phone.css"
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="../../libraries/frameworks/io2012/css/slidify.css" >
   <link rel="stylesheet" href="../../libraries/highlighters/highlight.js/css/zenburn.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
-  <script data-main="../../libraries/frameworks/io2012/js/slides" 
+  <script data-main="../../libraries/frameworks/io2012/js/slides"
     src="../../libraries/frameworks/io2012/js/require-1.0.8.min.js">
   </script>
-  
+
     <link rel="stylesheet" href = "../../assets/css/custom.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BACKUP.546.css">
 <link rel="stylesheet" href = "../../assets/css/custom.css.BASE.546.css">
@@ -29,10 +29,10 @@
 </head>
 <body style="opacity: 0">
   <slides class="layout-widescreen">
-    
+
     <!-- LOGO SLIDE -->
     <!-- END LOGO SLIDE -->
-    
+
 
     <!-- TITLE SLIDE -->
     <!-- Should I move this to a Local Layout File? -->
@@ -141,7 +141,7 @@ table(trainIndicator)
 </code></pre>
 
 <pre><code>## trainIndicator
-##    0    1 
+##    0    1
 ## 2314 2287
 </code></pre>
 
@@ -177,25 +177,25 @@ testSpam = spam[trainIndicator == 0, ]
     <pre><code class="r">names(trainSpam)
 </code></pre>
 
-<pre><code>##  [1] &quot;make&quot;              &quot;address&quot;           &quot;all&quot;              
-##  [4] &quot;num3d&quot;             &quot;our&quot;               &quot;over&quot;             
-##  [7] &quot;remove&quot;            &quot;internet&quot;          &quot;order&quot;            
-## [10] &quot;mail&quot;              &quot;receive&quot;           &quot;will&quot;             
-## [13] &quot;people&quot;            &quot;report&quot;            &quot;addresses&quot;        
-## [16] &quot;free&quot;              &quot;business&quot;          &quot;email&quot;            
-## [19] &quot;you&quot;               &quot;credit&quot;            &quot;your&quot;             
-## [22] &quot;font&quot;              &quot;num000&quot;            &quot;money&quot;            
-## [25] &quot;hp&quot;                &quot;hpl&quot;               &quot;george&quot;           
-## [28] &quot;num650&quot;            &quot;lab&quot;               &quot;labs&quot;             
-## [31] &quot;telnet&quot;            &quot;num857&quot;            &quot;data&quot;             
-## [34] &quot;num415&quot;            &quot;num85&quot;             &quot;technology&quot;       
-## [37] &quot;num1999&quot;           &quot;parts&quot;             &quot;pm&quot;               
-## [40] &quot;direct&quot;            &quot;cs&quot;                &quot;meeting&quot;          
-## [43] &quot;original&quot;          &quot;project&quot;           &quot;re&quot;               
-## [46] &quot;edu&quot;               &quot;table&quot;             &quot;conference&quot;       
+<pre><code>##  [1] &quot;make&quot;              &quot;address&quot;           &quot;all&quot;
+##  [4] &quot;num3d&quot;             &quot;our&quot;               &quot;over&quot;
+##  [7] &quot;remove&quot;            &quot;internet&quot;          &quot;order&quot;
+## [10] &quot;mail&quot;              &quot;receive&quot;           &quot;will&quot;
+## [13] &quot;people&quot;            &quot;report&quot;            &quot;addresses&quot;
+## [16] &quot;free&quot;              &quot;business&quot;          &quot;email&quot;
+## [19] &quot;you&quot;               &quot;credit&quot;            &quot;your&quot;
+## [22] &quot;font&quot;              &quot;num000&quot;            &quot;money&quot;
+## [25] &quot;hp&quot;                &quot;hpl&quot;               &quot;george&quot;
+## [28] &quot;num650&quot;            &quot;lab&quot;               &quot;labs&quot;
+## [31] &quot;telnet&quot;            &quot;num857&quot;            &quot;data&quot;
+## [34] &quot;num415&quot;            &quot;num85&quot;             &quot;technology&quot;
+## [37] &quot;num1999&quot;           &quot;parts&quot;             &quot;pm&quot;
+## [40] &quot;direct&quot;            &quot;cs&quot;                &quot;meeting&quot;
+## [43] &quot;original&quot;          &quot;project&quot;           &quot;re&quot;
+## [46] &quot;edu&quot;               &quot;table&quot;             &quot;conference&quot;
 ## [49] &quot;charSemicolon&quot;     &quot;charRoundbracket&quot;  &quot;charSquarebracket&quot;
-## [52] &quot;charExclamation&quot;   &quot;charDollar&quot;        &quot;charHash&quot;         
-## [55] &quot;capitalAve&quot;        &quot;capitalLong&quot;       &quot;capitalTotal&quot;     
+## [52] &quot;charExclamation&quot;   &quot;charDollar&quot;        &quot;charHash&quot;
+## [55] &quot;capitalAve&quot;        &quot;capitalLong&quot;       &quot;capitalTotal&quot;
 ## [58] &quot;type&quot;
 </code></pre>
 
@@ -274,8 +274,8 @@ testSpam = spam[trainIndicator == 0, ]
     <pre><code class="r">table(trainSpam$type)
 </code></pre>
 
-<pre><code>## 
-## nonspam    spam 
+<pre><code>##
+## nonspam    spam
 ##    1381     906
 </code></pre>
 
@@ -426,7 +426,7 @@ predictedSpam[predictionModel$fitted &gt; 0.5] = &quot;spam&quot;
 table(predictedSpam, testSpam$type)
 </code></pre>
 
-<pre><code>##              
+<pre><code>##
 ## predictedSpam nonspam spam
 ##       nonspam    1346  458
 ##       spam         61  449
@@ -581,8 +581,8 @@ table(predictedSpam, testSpam$type)
   </slides>
 
   <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({mode: 'overlay'});</script>
   <![endif]-->
