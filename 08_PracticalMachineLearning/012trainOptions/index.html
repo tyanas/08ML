@@ -134,7 +134,8 @@ modelFit &lt;- train(type ~.,data=training, method=&quot;glm&quot;)</code></pre>
 </div>
 <div id="train-options" class="section level2">
 <h2>Train options</h2>
-<pre class="r"><code>args(train.default)</code></pre>
+<pre class="r"><code>library(caret)
+args(train.default)</code></pre>
 <pre><code>function (x, y, method = &quot;rf&quot;, preProcess = NULL, ..., weights = NULL, 
     metric = ifelse(is.factor(y), &quot;Accuracy&quot;, &quot;RMSE&quot;), maximize = ifelse(metric %in% 
         c(&quot;RMSE&quot;, &quot;logLoss&quot;), FALSE, TRUE), trControl = trainControl(), 
@@ -144,8 +145,16 @@ NULL</code></pre>
 </div>
 <div id="metric-options" class="section level2">
 <h2>Metric options</h2>
-<p><strong>Continous outcomes</strong>: * <em>RMSE</em> = Root mean squared error * <em>RSquared</em> = <span class="math inline">\(R^2\)</span> from regression models</p>
-<p><strong>Categorical outcomes</strong>: * <em>Accuracy</em> = Fraction correct * <em>Kappa</em> = A measure of <a href="http://en.wikipedia.org/wiki/Cohen%27s_kappa">concordance</a></p>
+<p><strong>Continous outcomes</strong>:</p>
+<ul>
+<li><em>RMSE</em> = Root mean squared error</li>
+<li><em>RSquared</em> = <span class="math inline">\(R^2\)</span> from regression models</li>
+</ul>
+<p><strong>Categorical outcomes</strong>:</p>
+<ul>
+<li><em>Accuracy</em> = Fraction correct</li>
+<li><em>Kappa</em> = A measure of <a href="http://en.wikipedia.org/wiki/Cohen%27s_kappa">concordance</a></li>
+</ul>
 <hr />
 </div>
 <div id="traincontrol" class="section level2">
@@ -168,18 +177,24 @@ NULL</code></pre>
 <div id="traincontrol-resampling" class="section level2">
 <h2>trainControl resampling</h2>
 <ul>
-<li><em>method</em></li>
+<li><em>method</em>
+<ul>
 <li><em>boot</em> = bootstrapping</li>
 <li><em>boot632</em> = bootstrapping with adjustment</li>
 <li><em>cv</em> = cross validation</li>
 <li><em>repeatedcv</em> = repeated cross validation</li>
 <li><em>LOOCV</em> = leave one out cross validation</li>
-<li><em>number</em></li>
+</ul></li>
+<li><em>number</em>
+<ul>
 <li>For boot/cross validation</li>
 <li>Number of subsamples to take</li>
-<li><em>repeats</em></li>
+</ul></li>
+<li><em>repeats</em>
+<ul>
 <li>Number of times to repeate subsampling</li>
 <li>If big this can <em>slow things down</em></li>
+</ul></li>
 </ul>
 <hr />
 </div>

@@ -35,7 +35,7 @@ knit_hooks$set(plot = knitr:::hook_plot_html)
 
 ## Why preprocess?
 
-```{r loadPackage,cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r skewedVariable,cache=TRUE,fig.height=3.5,fig.width=3.5}
 library(caret); library(kernlab); data(spam)
 inTrain <- createDataPartition(y=spam$type,
                               p=0.75, list=FALSE)
@@ -48,7 +48,7 @@ hist(training$capitalAve,main="",xlab="ave. capital run length")
 
 ## Why preprocess?
 
-```{r ,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r meanSd,dependson="skewedVariable",cache=TRUE,fig.height=3.5,fig.width=3.5}
 mean(training$capitalAve)
 sd(training$capitalAve)
 ```
@@ -57,7 +57,7 @@ sd(training$capitalAve)
 
 ## Standardizing
 
-```{r ,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r standardizeTrain,dependson="skewedVariable",cache=TRUE,fig.height=3.5,fig.width=3.5}
 trainCapAve <- training$capitalAve
 trainCapAveS <- (trainCapAve  - mean(trainCapAve))/sd(trainCapAve)
 mean(trainCapAveS)
@@ -68,7 +68,7 @@ sd(trainCapAveS)
 
 ## Standardizing - test set
 
-```{r ,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r standardizeTest,dependson="skewedVariable",cache=TRUE,fig.height=3.5,fig.width=3.5}
 testCapAve <- testing$capitalAve
 testCapAveS <- (testCapAve  - mean(trainCapAve))/sd(trainCapAve)
 mean(testCapAveS)
@@ -80,7 +80,7 @@ sd(testCapAveS)
 
 ## Standardizing - _preProcess_ function
 
-```{r preprocess,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=3.5}
+```{r preprocess,dependson="skewedVariable",cache=TRUE,fig.height=3.5,fig.width=3.5}
 preObj <- preProcess(training[,-58],method=c("center","scale"))
 trainCapAveS <- predict(preObj,training[,-58])$capitalAve
 mean(trainCapAveS)
@@ -102,7 +102,7 @@ sd(testCapAveS)
 
 ## Standardizing - _preProcess_ argument
 
-```{r training, dependson="loadPackage",cache=TRUE}
+```{r training, dependson="skewedVariable",cache=TRUE}
 set.seed(32343)
 modelFit <- train(type ~.,data=training,
                   preProcess=c("center","scale"),method="glm")
@@ -114,7 +114,7 @@ modelFit
 
 ## Standardizing - Box-Cox transforms
 
-```{r ,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=7}
+```{r box-cox,dependson="skewedVariable",cache=TRUE,fig.height=3.5,fig.width=7}
 preObj <- preProcess(training[,-58],method=c("BoxCox"))
 trainCapAveS <- predict(preObj,training[,-58])$capitalAve
 par(mfrow=c(1,2)); hist(trainCapAveS); qqnorm(trainCapAveS)
@@ -125,7 +125,7 @@ par(mfrow=c(1,2)); hist(trainCapAveS); qqnorm(trainCapAveS)
 
 ## Standardizing - Imputing data
 
-```{r knn,dependson="loadPackage",cache=TRUE,fig.height=3.5,fig.width=7}
+```{r knn,dependson="skewedVariable",cache=TRUE,fig.height=3.5,fig.width=7}
 set.seed(13343)
 
 # Make some values NA
