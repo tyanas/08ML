@@ -131,8 +131,8 @@ print(modFit)
 
 ## Plot the results
 
-```{r, dependson="wage", fig.height=4,fig.width=4}
-qplot(predict(modFit,testing),wage,data=testing)
+```{r qplot, dependson="wage", fig.height=4,fig.width=4}
+qplot(predict(modFit,testing),wage,data=testing, colour=education)
 ```
 
 

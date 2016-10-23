@@ -64,7 +64,7 @@ __Cons__:
 ## Iris data
 
 ```{r iris, cache=TRUE}
-data(iris); library(ggplot2)
+data(iris); library(ggplot2); library(caret)
 inTrain <- createDataPartition(y=iris$Species,
                               p=0.7, list=FALSE)
 training <- iris[inTrain,]
@@ -114,7 +114,7 @@ table(pred,testing$Species)
 
 ## Predicting new values
 
-```{r, dependson="predForest",fig.height=4,fig.width=4}
+```{r qplot, dependson="predForest",fig.height=4,fig.width=4}
 qplot(Petal.Width,Petal.Length,colour=predRight,data=testing,main="newdata Predictions")
 ```
 
