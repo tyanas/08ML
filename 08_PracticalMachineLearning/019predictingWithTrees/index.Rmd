@@ -102,10 +102,11 @@ $$ -\sum_{k=1}^K \hat{p}_{mk} \log_2\hat{p}_{mk} $$
 http://en.wikipedia.org/wiki/Decision_tree_learning
 
 
---- &twocol w1:50% w2:50%
+--- 
+
 ## Measures of impurity
 
-*** =left
+
 
 ```{r leftplot,fig.height=3,fig.width=4,echo=FALSE,fig.align="center"}
 par(mar=c(0,0,0,0)); set.seed(1234); x = rep(1:4,each=4); y = rep(1:4,4)
@@ -116,9 +117,7 @@ plot(x,y,xaxt="n",yaxt="n",cex=3,col=c(rep("blue",15),rep("red",1)),pch=19)
 * __Gini:__ $1 - [(1/16)^2 + (15/16)^2] = 0.12$
 * __Information:__$-[1/16 \times log2(1/16) + 15/16 \times log2(15/16)] = 0.34$
 
-*** =right
-
-```{r,dependson="leftplot",fig.height=3,fig.width=4,echo=FALSE,fig.align="center"}
+```{r rightplot,dependson="leftplot",fig.height=3,fig.width=4,echo=FALSE,fig.align="center"}
 par(mar=c(0,0,0,0));
 plot(x,y,xaxt="n",yaxt="n",cex=3,col=c(rep("blue",8),rep("red",8)),pch=19)
 ```
@@ -146,6 +145,7 @@ table(iris$Species)
 ## Create training and test sets
 
 ```{r trainingTest, dependson="iris",cache=TRUE}
+library(caret)
 inTrain <- createDataPartition(y=iris$Species,
                               p=0.7, list=FALSE)
 training <- iris[inTrain,]
@@ -158,7 +158,7 @@ dim(training); dim(testing)
 
 ## Iris petal widths/sepal width
 
-```{r, dependson="trainingTest",fig.height=4,fig.width=6}
+```{r iris-qplot, dependson="trainingTest",fig.height=4,fig.width=6}
 qplot(Petal.Width,Sepal.Width,colour=Species,data=training)
 ```
 
@@ -177,7 +177,7 @@ print(modFit$finalModel)
 
 ## Plot tree
 
-```{r, dependson="createTree", fig.height=4.5, fig.width=4.5}
+```{r iris-fit, dependson="createTree", fig.height=4.5, fig.width=4.5}
 plot(modFit$finalModel, uniform=TRUE,
       main="Classification Tree")
 text(modFit$finalModel, use.n=TRUE, all=TRUE, cex=.8)
@@ -188,7 +188,7 @@ text(modFit$finalModel, use.n=TRUE, all=TRUE, cex=.8)
 
 ## Prettier plots
 
-```{r, dependson="createTree", fig.height=4.5, fig.width=4.5}
+```{r iris-fit-fancy, dependson="createTree", fig.height=4.5, fig.width=4.5}
 library(rattle)
 fancyRpartPlot(modFit$finalModel)
 ```
