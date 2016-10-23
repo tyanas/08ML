@@ -73,7 +73,7 @@ head(trainFaith)
 
 ## Eruption duration versus waiting time
 
-```{r eruption,dependson="faith",fig.height=4,fig.width=4}
+```{r eruption,dependson="faith",fig.height=4,fig.width=4, out.width=400}
 plot(trainFaith$waiting,trainFaith$eruptions,pch=19,col="blue",xlab="Waiting",ylab="Duration")
 ```
 
@@ -141,7 +141,7 @@ sqrt(sum((predict(lm1,newdata=testFaith)-testFaith$eruptions)^2))
 pred1 <- predict(lm1,newdata=testFaith,interval="prediction")
 ord <- order(testFaith$waiting)
 plot(testFaith$waiting,testFaith$eruptions,pch=19,col="blue")
-matlines(testFaith$waiting[ord],pred1[ord,],type="l",,col=c(1,2,2),lty = c(1,1,1), lwd=3)
+matlines(testFaith$waiting[ord],pred1[ord,],type="l",col=c(1,2,2),lty = c(1,1,1), lwd=3)
 ```
 
 
@@ -164,7 +164,3 @@ summary(modFit$finalModel)
 * [Elements of statistical learning](http://www-stat.stanford.edu/~tibs/ElemStatLearn/)
 * [Modern applied statistics with S](http://www.amazon.com/Modern-Applied-Statistics-W-N-Venables/dp/0387954570)
 * [Introduction to statistical learning](http://www-bcf.usc.edu/~gareth/ISL/)
-
-
-
-

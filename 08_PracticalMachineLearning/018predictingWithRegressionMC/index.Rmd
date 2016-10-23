@@ -72,7 +72,7 @@ dim(training); dim(testing)
 
 ## Feature plot
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=4}
+```{r featurePlot,dependson="trainingTest",fig.height=4,fig.width=4}
 featurePlot(x=training[,c("age","education","jobclass")],
             y = training$wage,
             plot="pairs")
@@ -84,7 +84,7 @@ featurePlot(x=training[,c("age","education","jobclass")],
 ## Plot age versus wage
 
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+```{r age-wage,dependson="trainingTest",fig.height=4,fig.width=6}
 qplot(age,wage,data=training)
 ```
 
@@ -94,7 +94,7 @@ qplot(age,wage,data=training)
 ## Plot age versus wage colour by jobclass
 
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+```{r age-wage-clr-jobclass,dependson="trainingTest",fig.height=4,fig.width=6}
 qplot(age,wage,colour=jobclass,data=training)
 ```
 
@@ -104,7 +104,7 @@ qplot(age,wage,colour=jobclass,data=training)
 ## Plot age versus wage colour by education
 
 
-```{r ,dependson="trainingTest",fig.height=4,fig.width=6}
+```{r age-wage-clr-edu,dependson="trainingTest",fig.height=4,fig.width=6}
 qplot(age,wage,colour=education,data=training)
 ```
 
@@ -127,7 +127,7 @@ Education levels: 1 = HS Grad, 2 = Some College, 3 = College Grad, 4 = Advanced 
 
 ## Diagnostics
 
-```{r,dependson="modelFit",fig.height=5,fig.width=5}
+```{r diagnostics,dependson="modelFit",fig.height=5,fig.width=5}
 plot(finMod,1,pch=19,cex=0.5,col="#00000010")
 ```
 
